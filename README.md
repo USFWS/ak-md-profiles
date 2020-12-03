@@ -95,16 +95,17 @@ Changes made to a existing profile may not be reflected until the editor is relo
 
 # References and resources
 [mdEditor](https://www.mdeditor.org/)
+
 [mdEdiorGuide](https://guide.mdeditor.org/)
 
 Core Profile Definitions for the mdEditor
   https://adiwg.github.io/mdProfiles/
 
 Core Schema:
-  https://raw.githubusercontent.com/adiwg/mdJson-schemas/master/schema/schema.json
+    https://raw.githubusercontent.com/adiwg/mdJson-schemas/master/schema/schema.json
 
 ADIwg mdProfiles:
-  https://github.com/adiwg/mdProfiles
+    https://github.com/adiwg/mdProfiles
 
 mdJson-schemas:
-  https://github.com/adiwg/mdJson-schemas
+    https://github.com/adiwg/mdJson-schemas

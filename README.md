@@ -8,6 +8,28 @@ When editing a record, a [Profile Seletion](https://guide.mdeditor.org/tutorial/
 
 For more information see the mdEditor [Core Profile Definitions](https://adiwg.github.io/mdProfiles/) page.
 
+
+# Contents
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [Alaska Region mdEditor profiles](#alaska-region-mdeditor-profiles)
+- [Contents](#contents)
+- [Custom profile](#custom-profile)
+	- [What is a profile definition](#what-is-a-profile-definition)
+	- [What is a validation schema](#what-is-a-validation-schema)
+- [Creating profile definitions and schemas](#creating-profile-definitions-and-schemas)
+- [Adding a custom profile to mdEditor](#adding-a-custom-profile-to-mdeditor)
+	- [Add profile definition](#add-profile-definition)
+	- [Add profile for use by mdEditor](#add-profile-for-use-by-mdeditor)
+	- [Add Validation Schema:](#add-validation-schema)
+- [Updating a profile](#updating-a-profile)
+- [Curently available Alaska Region profile definitions](#curently-available-alaska-region-profile-definitions)
+	- [Alaska Region basic project definition (alpha version)](#alaska-region-basic-project-definition-alpha-version)
+	- [Alaska Region basic product definition (alpha version)](#alaska-region-basic-product-definition-alpha-version)
+- [References and resources](#references-and-resources)
+
+<!-- /TOC -->
+
 # Custom profile
 A mdEditor profile is a template that can be used to limit the metadata fields that are displayed during an edit session and define the fields that are required to be completed within a metadata record. A mdEditor custom profile consists of a "profile definition" and an associated "validation schema". Multiple validation schemas may be associated with a single profile definition. Each unique combination of a definition and schema is a distinct mdEditor profile.
 
@@ -48,7 +70,7 @@ This option is currently unavailable. But it would go something like this:
 
   1. Goto Settings/Profiles/Validation
   1. Select "Add Schema"
-  1. Enter URL to the schema root (e.g. https://raw.githubusercontent.com/adiwg/mdJson-schemas/master/schema/schema.json)
+  1. Enter URL to the schema root
   1. Enteer a Title, Description and Type
   1. Select schema "type"
   1. Select "Save Schema". You should receive a notification that the profile has been downloaded.

@@ -47,32 +47,31 @@ Before a custom profile can be created for use in the mdEditor, the profile defi
 Note: if you are using GitHub to host profile definition files, make sure that you provide users with the url to the "raw" version of the file.
 
 ## Add profile definition
-  1. Go to Settings/Profiles/Manage Definitions
-  2. Select "Add Definition"
+  1. Go to Settings/Profiles/Manage Definitions.
+  2. Select "Add Definition".
   3. Select "Imported" tab.
-  4. Enter URL to profile definition
-  5. Enter an optional alias. (the alias replaces the definition title)
+  4. Enter URL to profile definition.
+  5. Enter an optional alias (the alias replaces the definition title).
   6. Select "Save definition". You should receive a notification that the profile has been downloaded and profile information will be displayed on the tab.
 
 ## Add profile for use by mdEditor
-  1. Go to Settings/Profiles
-  2. Select "Add Profile"
-  3. Enter "Title" (displayed in profile selection box) and optional description (mouse-over help provided in profile selection box)
-  4. Select a "Profile Definition" from dropdown list (either the definition title or the alias entered in the previous step be displayed)
-  5. Identify a schema from the "Selected Schema" list and select "Add" (currently only the "mdCore" schema is available)
-  6. Select "Save Profile"
+  1. Go to Settings/Profiles.
+  1. Select "Add Profile".
+  1. Enter a "Title" (displayed in profile selection field).
+	1. Select a "Profile Definition" from dropdown list (either the definition title or the alias entered in the previous step will be displayed).
+	1. And optional description (displayed when cursor hovers over "?" in the profile selection field).
+  1. Identify a schema from the "Selected Schema" list and select "Add" (NOTE: Skip this step for testing. You will see a "No schemas have been assigned" warning, just ignore that for now!).
+  1. Select "Save Profile".
 
 Notes:
-Changes made to a profile that is loaded in the profile selection field may not be reflected until the editor is reloaded.
+Changes made to a existing profile may not be reflected until the editor is reloaded.
 
 ## Add Validation Schema:
-This option is currently unavailable. But it would go something like this:
-
-  1. Goto Settings/Profiles/Validation
-  1. Select "Add Schema"
-  1. Enter URL to the schema root
-  1. Enteer a Title, Description and Type
-  1. Select schema "type"
+  1. Goto Settings/Profiles/Validation.
+  1. Select "Add Schema".
+  1. Enter URL to the schema root.
+  1. Enter a Title and Description.
+  1. Select the record "Type" to which the schema applies.
   1. Select "Save Schema". You should receive a notification that the profile has been downloaded.
 
 # Updating a profile
@@ -83,7 +82,7 @@ This option is currently unavailable. But it would go something like this:
   5. Select "Update Definition" button to proceed with update.
   6. Refresh browser to activate updated profile.
 
-# Curently available Alaska Region profile definitions
+# Currently available Alaska Region profile definitions
 
 ## Alaska Region basic project definition (alpha version)
     File name: ak-proj-a.json
@@ -95,17 +94,17 @@ This option is currently unavailable. But it would go something like this:
 
 
 # References and resources
-  - [mdEditor](https://www.mdeditor.org/)
-  - [mdEdiorGuide](https://guide.mdeditor.org/)
+[mdEditor](https://www.mdeditor.org/)
+[mdEdiorGuide](https://guide.mdeditor.org/)
 
 Core Profile Definitions for the mdEditor
-https://adiwg.github.io/mdProfiles/
+  https://adiwg.github.io/mdProfiles/
 
 Core Schema:
-https://raw.githubusercontent.com/adiwg/mdJson-schemas/master/schema/schema.json
+  https://raw.githubusercontent.com/adiwg/mdJson-schemas/master/schema/schema.json
 
 ADIwg mdProfiles:
-https://github.com/adiwg/mdProfiles
+  https://github.com/adiwg/mdProfiles
 
 mdJson-schemas:
-https://github.com/adiwg/mdJson-schemas
+  https://github.com/adiwg/mdJson-schemas

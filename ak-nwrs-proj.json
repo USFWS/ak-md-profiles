@@ -1,0 +1,155 @@
+{
+  "identifier": "ak-nwrs-proj",
+  "namespace": "gov.fws.profile",
+  "alternateId": ["ak-nwrs-proj"],
+  "title": "AK Refuges Project",
+  "description": "Metadata record pertaining to a project within the AK NWRS. Projects are associated with products (e.g. tabular datasets, reports, etc.)",
+  "version": "0.0.1",
+  "components": {
+    "record": {
+      "main": {
+        "basicInformation": {
+          "recordId": false,
+          "title": {},
+          "status": {},
+          "defaultLocale": false
+        },
+        "resourceType": {
+          "resourceType": true,
+          "name": true
+        },
+        "citation": {
+          "basicInformation": {
+            "edition": false,
+            "presentationForm": false,
+			"alternateTitle": false
+          },
+          "onlineResource": {
+            "protocol": false,
+            "applicationProfile": false,
+            "protocolRequest": false
+          },
+          "identifier": false,
+          "otherCitationDetails": false,
+          "graphic": false
+        },
+		"description": {
+          "shortAbstract": false
+        },
+        "purpose": true,
+        "supplementalInfo": false,
+        "environmentDescription": false,
+        "timePeriod": {
+          "identifier": false,
+          "description": false,
+          "periodName": false,
+          "interval": false,
+          "duration": false
+        },
+        "maintenance": false,
+        "graphicOverview": false,
+        "credit": false
+      },
+      "metadata": {
+        "metadataIdentifier": false,
+        "parentMetadata": false,
+        "onlineResource": false,
+        "repositories": false,
+        "maintenance": {
+          "frequency": true,
+          "dates": false,
+          "contact": false,
+          "note": false,
+          "scope": false
+        },
+        "defaultLocale": false,
+        "alternateMetadataReference": false
+      },
+      "extent": {
+        "geographic": {
+          "description": false,
+          "containsData": false
+        }
+      },
+      "associated": {
+        "resourceCitation": {
+          "basicInformation": {
+            "alternateTitle": false,
+            "edition": false,
+            "presentationForm": false
+          },
+          "identifier": false,
+          "identifierSimple": false,
+          "onlineResource": {
+            "protocol": false,
+            "applicationProfile": false,
+            "protocolRequest": false
+          },
+          "identifierShort": {},
+          "series": false,
+          "otherCitationDetails": false,
+          "graphic": false
+        },
+        "metadataCitation": {
+          "basicInformation": {
+            "alternateTitle": false,
+            "edition": false,
+            "presentationForm": false
+          },
+          "identifier": false,
+          "identifierSimple": false,
+          "onlineResource": {
+            "protocol": false,
+            "applicationProfile": false,
+            "protocolRequest": false
+          },
+          "identifierShort": {},
+          "series": false,
+          "otherCitationDetails": false,
+          "graphic": false
+        }
+      },
+      "constraints": {
+        "security": false,
+        "graphic": false,
+        "responsibleParty": false
+      }
+    },
+    "contact": {},
+    "dictionary": {}
+  },
+  "nav": {
+    "record": [
+      {
+        "title": "Main",
+        "target": "record.show.edit.main",
+        "tip": "Basic information about the project."
+      },
+      {
+        "title": "Metadata",
+        "target": "record.show.edit.metadata",
+        "tip": "Information about the metadata for the project."
+      },
+      {
+        "title": "Keywords",
+        "target": "record.show.edit.keywords",
+        "tip": "Terms used to describe the project. ISO Topic Category is required for USFWS records."
+      },
+      {
+        "title": "Extent",
+        "target": "record.show.edit.extent",
+        "tip": "Information describing the geographic bounds of the project."
+      },
+      {
+        "title": "Taxonomy",
+        "target": "record.show.edit.taxonomy",
+        "tip": "Information on the taxa associated with the project."
+      },
+      {
+        "title": "Associated",
+        "target": "record.show.edit.associated",
+        "tip": "Other resources with a defined relationship to the project. For example, link a product to the project."
+      }
+    ]
+  }
+}

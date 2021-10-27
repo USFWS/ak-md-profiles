@@ -1,0 +1,708 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FES Product Schema",
+  "description": "Required fields and terms for metadata written for USFWS Alaska Region FES data products.",
+  "$id": "fes-product-schema.json",
+  "version": "1.0.0",
+  "properties": {
+    "metadata": {
+      "$ref": "#/definitions/Metadata"
+    },
+    "dataDictionary": {}
+  },
+  "if": {
+    "properties": {
+      "metadata": {
+        "properties": {
+          "resourceInfo": {
+            "properties": {
+              "resourceType": {
+                "contains": {
+                  "properties": {
+                    "type": {
+                      "const": "tabularDataset"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "then": {
+    "required": [
+      "metadata",
+      "dataDictionary"
+    ],
+    "errorMessage": {
+      "required": {
+        "dataDictionary": "Data products with the type 'tabularDataset' must be associated with a data dictionary under the 'Dictionaries' tab."
+      }
+    }
+  },
+  "else": {
+    "required": [
+      "metadata"
+    ]
+  },
+  "errorMessage": "If a data product is a 'tabularDataset', then it must be associated with a data dictionary under the 'Dictionaries' tab.",
+  "definitions": {
+    "Metadata": {
+      "properties": {
+        "resourceInfo": {
+          "$ref": "#/definitions/ResourceInfo"
+        },
+        "metadataInfo": {
+          "$ref": "#/definitions/MetadataInfo"
+        },
+        "resourceDistribution": {
+          "$ref": "#/definitions/ResourceDistribution"
+        },
+        "associatedResource": {
+          "$ref": "#/definitions/AssociatedResource"
+        }
+      },
+      "required": [
+        "resourceInfo",
+        "metadataInfo",
+        "resourceDistribution"
+      ],
+      "errorMessage": {
+        "required": {
+          "resourceDistribution": "Resource distribution must be described under the 'Distribution' tab."
+        }
+      }
+    },
+    "ResourceInfo": {
+      "properties": {
+        "status": {
+          "items": {
+            "enum": [
+              "completed",
+              "onGoing",
+              "proposed",
+              "accepted"
+            ],
+            "errorMessage": {
+              "enum": "Product status in the 'Basic Information' section under the 'Main' tab must be one of: 'completed', 'onGoing', 'proposed', or 'accepted'"
+            }
+          }
+        },
+        "resourceType": {
+          "items": {
+            "properties": {
+              "type": {
+                "not": {
+                  "enum": [
+                    "product",
+                    "project"
+                  ]
+                },
+                "errorMessage": {
+                  "not": "Resource type for products must not be 'product' or 'project' in the 'Resource Types' section under the 'Main' tab. Products should use a more specific type such as 'tabularDataset' or 'document'. For projects, use the custom profile for FES projects."
+                }
+              }
+            }
+          }
+        },
+        "pointOfContact": {
+          "allOf": [
+            {
+              "contains": {
+                "properties": {
+                  "role": {
+                    "const": "pointOfContact",
+                    "errorMessage": {
+                      "const": "The 'Point of Contact' section under the 'Main' tab must have at least one primary contact listed with the role 'pointOfContact'."
+                    }
+                  }
+                },
+              }
+            },
+            {
+              "contains": {
+                "properties": {
+                  "role": {
+                    "const": "principalInvestigator",
+                    "errorMessage": {
+                      "const": "The 'Point of Contact' section under the 'Main' tab must have at least one person listed as the role 'principalInvestigator'."
+                    }
+                  }
+                },
+              }
+            },
+            {
+              "contains": {
+                "properties": {
+                  "role": {
+                    "const": "AKRegionDataCustodian",
+                    "errorMessage": {
+                      "const": "The 'Point of Contact' section under the 'Main' tab must have at least one Data Custodian listed with the role 'custodian' or 'AKRegionDataCustodian', which must be entered manually rather than by the dropdown menu."
+                    }
+                  }
+                },
+              }
+            },
+            {
+              "contains": {
+                "properties": {
+                  "role": {
+                    "const": "AKRegionDataTrustee",
+                    "errorMessage": {
+                      "const": "The 'Point of Contact' section under the 'Main' tab must have at least one Data Trustee listed with the role 'AKRegionDataTrustee', which must be entered manually rather than by the dropdown menu."
+                    }
+                  }
+                },
+              }
+            },
+            {
+              "contains": {
+                "properties": {
+                  "role": {
+                    "const": "AKRegionDataSteward",
+                    "errorMessage": {
+                      "const": "The 'Point of Contact' section under the 'Main' tab must have at least one Data Steward listed with the role 'AKRegionDataSteward', which must be entered manually rather than by the dropdown menu."
+                    }
+                  }
+                },
+              }
+            },
+            {
+              "contains": {
+                "properties": {
+                  "role": {
+                    "const": "AKRegionDataProducer",
+                    "errorMessage": {
+                      "const": "The 'Point of Contact' section under the 'Main' tab must have at least one Data Producer listed with the role 'AKRegionDataProducer', which must be entered manually rather than by the dropdown menu."
+                    }
+                  }
+                },
+              }
+            },
+            {
+              "contains": {
+                "properties": {
+                  "role": {
+                    "const": "administrator",
+                    "errorMessage": {
+                      "const": "The 'Point of Contact' section under the 'Main' tab must have the Alaska Region contact listed with the role 'administrator'."
+                    }
+                  }
+                },
+              }
+            }
+          ],
+          "items": {
+            "properties": {
+              "role": {},
+              "party": {}
+            },
+            "required": [
+              "role",
+              "party"
+            ],
+            "errorMessage": {
+              "role": "At least one role must be provided in the 'Point of Contact' section under the 'Main' tab.",
+              "party": "At least one person must be assigned to a role in the 'Point of Contact' section under the 'Main' tab."
+            }
+          }
+        },
+        "citation": {
+          "properties": {
+            "title": {},
+            "date": {
+              "items": {
+                "properties": {
+                  "date": {},
+                  "dateType": {}
+                },
+                "required": [
+                  "date",
+                  "dateType"
+                ],
+                "errorMessage": {
+                  "required": {
+                    "date": "At least one date (e.g. acquisition, creation, revision) must be provided in the 'Citation' section under the 'Main' tab.",
+                    "dateType": "A type must be provided for dates in the 'Citation' section under the 'Main' tab."
+                  }
+                }
+              }
+            },
+            "responsibleParty": {
+              "items": {
+                "properties": {
+                  "role": {},
+                  "party": {}
+                },
+                "required": [
+                  "role",
+                  "party"
+                ],
+                "errorMessage": {
+                  "required": {
+                    "role": "At least one role must be provided in the 'Responsible Party' section of the 'Citation' section under the 'Main' tab.",
+                    "party": "At least one person must be assigned to a role in the 'Responsible Party' section of the 'Citation' section under the 'Main' tab."
+                  }
+                }
+              },
+              "allOf": [
+                {
+                  "contains": {
+                    "properties": {
+                      "role": {
+                        "const": "pointOfContact",
+                        "errorMessage": {
+                          "const": "One role for 'Responsible Parties' within the 'Citation' section under the 'Main' tab must be pointOfContact."
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "contains": {
+                    "properties": {
+                      "role": {
+                        "const": "principalInvestigator",
+                        "errorMessage": {
+                          "const": "One role for 'Responsible Parties' within the 'Citation' section under the 'Main' tab must be principalInvestigator."
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "onlineResource": {
+              "items": {
+                "required": [
+                  "uri",
+                  "name",
+                  "function"
+                ],
+                "errorMessage": {
+                  "required": {
+                    "uri": "A URI for the project homepage or Regional Data Repository folder must be provided in the 'Online Resource' section of the 'Citation' section under the 'Main' tab. This should be a link for browsing rather than a direct download link.",
+                    "name": "A name for the project homepage or Regional Data Repository must be provided in the 'Online Resource' section of the 'Citation' section under the 'Main' tab.",
+                    "function": "The function of the project homepage (i.e. browsing) must be provided in the 'Online Resource' section of the 'Citation' section under the 'Main' tab."
+                  }
+                }
+              }
+            },
+            "identifier": {
+              "items": {
+                "properties": {
+                  "identifier": {},
+                  "namespace": {}
+                },
+                "required": [
+                  "identifier",
+                  "namespace"
+                ],
+                "errorMessage": {
+                  "required": {
+                    "identifier": "Provide an identifier (e.g. Digital Object Identifier (DOI), ISBN, UUID) for the product in the 'Citation' section under the 'Main' tab.",
+                    "namespace": "Provide the context (namespace) for the product identifier in the 'Citation' section under the 'Main' tab."
+                  }
+                }
+              },
+              "contains": {
+                "properties": {
+                  "namespace": {
+                    "const": "info:doi/",
+                    "errorMessage": {
+                      "const": "At least one identifier must be a Digital Object Identifier (DOI) in the 'Citation' section under the 'Main' tab."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "title",
+            "date",
+            "responsibleParty",
+            "onlineResource",
+            "identifier"
+          ],
+          "errorMessage": {
+            "required": {
+              "title": "A short, descriptive product title must be provided in the 'Basic Information' section under the 'Main' tab. Product titles should be uniquely identifiable.",
+              "date": "At least one date (e.g. acquisition, creation, revision) must be provided in the 'Citation' section under the 'Main' tab.",
+              "responsibleParty": "At least one Responsible Party must be provided in the 'Citation' section under the 'Main' tab. At least one pointOfContact and one principalInvestigator must be provided.",
+              "onlineResource": "At least one online resource for the project (e.g. project homepage, project ServCat page, Regional Data Repository folder) must be provided within the 'Citation' section under the 'Main' tab.",
+              "identifier": "At least one identifier must be provided within the 'Citation' section under the 'Main' tab. At least one identifier must be a Digital Object Identifier (DOI)."
+            }
+          }
+        },
+        "abstract": {},
+        "timePeriod": {
+          "oneOf": [
+            {
+              "properties": {
+                "startDateTime": {},
+                "endDateTime": {}
+              },
+              "anyOf": [
+                {
+                  "required": [
+                    "startDateTime"
+                  ]
+                },
+                {
+                  "required": [
+                    "endDateTime"
+                  ]
+                }
+              ]
+            },
+          ],
+          "errorMessage": {
+            "oneOf": "A start date and/or an end date must be provided for this data product in the 'Time Period' section under the 'Main' tab."
+          }
+        },
+        "resourceMaintenance": {
+          "items": {
+            "properties": {
+              "frequency": {}
+            },
+            "required": [
+              "frequency"
+            ],
+            "errorMessage": {
+              "required": {
+                "frequency": "Product resource maintenance frequency must be provided in the 'Maintenance' section under the 'Main' tab."
+              }
+            }
+          }
+        },
+        "keyword": {
+          "items": {
+            "properties": {
+              "keyword": {},
+              "thesaurus": {}
+            },
+            "required": [
+              "keyword",
+              "thesaurus"
+            ],
+            "errorMessage": {
+              "required": {
+                "keyword": "At least one keyword must be provided from a thesaurus under the 'Keywords' tab.",
+                "thesaurus": "At least one keyword thesaurus must be provided under the 'Keywords' tab."
+              }
+            }
+          },
+          "contains": {
+            "properties": {
+              "thesaurus": {
+                "properties": {
+                  "title": {
+                    "const": "ISO 19115 Topic Category",
+                    "errorMessage": {
+                      "const": "At least one keyword under the 'Keywords' tab must be from the ISO Topic Category thesaurus."
+                    }
+                  }
+                }
+              }
+            },
+          },
+        },
+        "extent": {
+          "items": {
+            "properties": {
+              "geographicExtent": {
+                "items": {
+                  "properties": {
+                    "boundingBox": {},
+                    "description": {},
+                    "geographicElement": {}
+                  },
+                  "required": [
+                    "boundingBox",
+                    "description",
+                    "geographicElement"
+                  ],
+                  "errorMessage": {
+                    "required": {
+                      "boundingBox": "Bounding box coordinates for the geographic extent must be provided in the 'Geographic Extent' section under the 'Extent' tab.",
+                      "description": "A description of the geographic extent must be provided in the 'Geographic Extent' section under the 'Extent' tab.",
+                      "geographicElement": "A map of geographic features must be provided in the 'Geographic Extent' section under the 'Extent' tab."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "constraint": {
+          "items": {
+            "properties": {
+              "type": {},
+              "legal": {
+                "properties": {
+                  "accessConstraint": {},
+                  "useConstraint": {},
+                  "otherConstraint": {}
+                },
+                "required": [
+                  "accessConstraint",
+                  "useConstraint",
+                  "otherConstraint"
+                ],
+                "errorMessage": {
+                  "required": {
+                    "accessConstraint": "Data products are by default in the Public Domain and should have 'Access Constraint' set to 'licenseUnrestricted' in the 'Legal' section under the 'Constraints' tab.",
+                    "useConstraint": "Data products are by default in the Public Domain and should have 'Use Constraint' set to 'unrestricted' in the 'Legal' section under the 'Constraint' tab.",
+                    "otherConstraint": "Data products are by default in the Public Domain and should have the link to this license (http://www.usa.gov/publicdomain/label/1.0/) in the 'Legal' section under the 'Constraint' tab. Products indented to be used internationally should be given a Creative Commons Zero license (https://creativecommons.org/publicdomain/zero/1.0/). If another license applies to this data product, provide that link here."
+                  }
+                }
+              }
+            },
+            "required": [
+              "type",
+              "legal"
+            ],
+            "errorMessage": {
+              "required": {
+                "type": "A constraint type for product use must be provided under the 'Constraints' tab. Government products by default fall under the U.S. Public Domain, and should have a constraint type of 'legal'.",
+                "legal": "A description of the legal constraints for the product's use must be provided in the 'Legal' section under the 'Constraints' tab. Government products by default fall under the U.S. Public Domain, and should have 'Access Constraints' and 'Use Constraints' set to 'licenseUnrestricted' and 'unrestricted', respectively. A link to the public domain license should be provided in the 'Other Constraints' section."
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "status",
+        "resourceType",
+        "pointOfContact",
+        "citation",
+        "abstract",
+        "timePeriod",
+        "resourceMaintenance",
+        "keyword",
+        "constraint"
+      ],
+      "errorMessage": {
+        "required": {
+          "status": "The current product status must be provided in the 'Basic Information' section under the 'Main' tab. Status must be one of: 'completed', 'onGoing', 'proposed', or 'accepted'",
+          "resourceType": "Resource type must be provided in the 'Resource Types' section under the 'Main' tab. The resource type for products must not be 'product', but should instead use a more specific type (e.g. tabularDataset, collection, document).",
+          "pointOfContact": "Project and product specific personnel must be provided in the 'Point of Contact' section under the 'Main' tab.",
+          "abstract": "An abstract for the product must be provided in the 'Description' section under the 'Main' tab. Abstracts should summarize the product's purpose and goals.",
+          "timePeriod": "A relevant time period for the product must be provided in the 'Time Period' section under the 'Main' tab.",
+          "resourceMaintenance": "Resource maintenance frequency must be provided in the 'Maintenance' section under the 'Main' tab. The maintenance frequency should describe how often the product is reviewed and/or updated.",
+          "keyword": "Product keywords must be provided under the 'Keywords' tab. At least one keyword must be provided from the 'ISO Topic Category' thesaurus.",
+          "constraint": "Resource constraints must be provided under the 'Constraints' tab. Government works are by default in the Public Domain, and should indicate this in the 'Legal' section."
+        }
+      }
+    },
+    "MetadataInfo": {
+      "properties": {
+        "metadataStatus": {},
+        "metadataDate": {
+          "items": {
+            "properties": {
+              "date": {},
+              "dateType": {}
+            },
+            "required": [
+              "date",
+              "dateType"
+            ],
+            "errorMessage": {
+              "required": {
+                "date": "At least one date associated with the metadata must be provided in the 'Basic Information' section under the 'Metadata' tab.",
+                "dateType": "A date type must be provided for dates associated with the metadata in the 'Basic Information' section under the 'Metadata' tab."
+              }
+            }
+          },
+          "contains": {
+            "properties": {
+              "dateType": {
+                "const": "creation",
+                "errorMessage": {
+                  "const": "A creation date for the metadata must be provided in the 'Basic Information' section under the 'Metadata' tab."
+                }
+              }
+            }
+          }
+        },
+        "metadataContact": {
+          "uniqueItems": true,
+          "allOf": [
+            {
+              "contains": {
+                "properties": {
+                  "role": {
+                    "const": "author",
+                    "errorMessage": {
+                      "const": "At least one metadata contact must have the role 'author' under the 'Metadata Contacts' section of the 'Metadata' tab."
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "contains": {
+                "properties": {
+                  "role": {
+                    "const": "pointOfContact",
+                    "errorMessage": {
+                      "const": "At least one metadata contact must have the role 'pointOfContact' under the 'Metadata Contacts' section of the 'Metadata' tab."
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "items": {
+            "properties": {
+              "role": {},
+              "party": {}
+            },
+            "required": [
+              "role",
+              "party"
+            ],
+            "errorMessage": {
+              "required": {
+                "role": "A role must be provided in the 'Metadata Contacts' section under the 'Metadata' tab.",
+                "party": "A contact must be provided in the 'Metadata Contacts' section under the 'Metadata' tab."
+              }
+            }
+          },
+          "errorMessage": {
+            "uniqueItems": "Each role in the 'Metadata Contacts' section under the 'Metadata' tab must be unique."
+          }
+        }
+      },
+      "required": [
+        "metadataStatus",
+        "metadataDate",
+        "metadataContact"
+      ],
+      "errorMessage": {
+        "required": {
+          "metadataStatus": "The status of the metadata (e.g. onGoing, completed), must be provided in the 'Basic Information' section under the 'Metadata' tab.",
+          "metadataDate": "The creation date of the metadata must be provided in the 'Basic Information' section under the 'Metadata' tab.",
+          "metadataContact": "Contacts for metadata creation must be provided in the 'Metadata Contact' section under the 'Metadata' tab. Roles must include at least 'pointOfContact' and 'author'."
+        }
+      }
+    },
+    "ResourceDistribution": {
+      "items": {
+        "properties": {
+          "distributor": {
+            "items": {
+              "properties": {
+                "contact": {
+                  "properties": {
+                    "role": {
+                      "const": "distributor",
+                      "errorMessage": {
+                        "const": "Role for distributor in the 'Distributor' section under the 'Distribution' tab must be 'distributor'."
+                      }
+                    },
+                    "party": {}
+                  },
+                  "required": [
+                    "role",
+                    "party"
+                  ],
+                  "errorMessage": {
+                    "required": {
+                      "role": "Indicate 'distributor' as the role for the product distributor under the 'Distribution' tab.",
+                      "party": "Indicate the organization that will distribute the product as the contact under the 'Distribution' tab."
+                    }
+                  }
+                },
+                "transferOption": {
+                  "items": {
+                    "properties": {
+                      "onlineOption": {
+                        "items": {
+                          "properties": {
+                            "uri": {},
+                            "name": {},
+                            "function": {}
+                          },
+                          "required": [
+                            "uri",
+                            "name",
+                            "function"
+                          ],
+                          "errorMessage": {
+                            "required": {
+                              "uri": "A URI must be provided for an online option to access the resource under the 'Transfer Option' section of the 'Distributor' section under the 'Distribution' tab. The URI should link to either the direct download (URI that will automatically start a download) or the link to page where you can download the resource.",
+                              "name": "A specific name for the resource download must be provided for an online option to access the resource under the 'Transfer Option' section of the 'Distributor' section under the 'Distribution' tab.",
+                              "function": "A link function must be provided for an online option to access the resource under the 'Transfer Option' section of the 'Distributor' section under the 'Distribution' tab. The function should be either 'download' if it is a direct download link or 'fileAccess' if it is a link to a page where data can be downloaded."
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "required": [
+                      "onlineOption"
+                    ],
+                    "errorMessage": {
+                      "required": {
+                        "onlineOption": "An online option for distribution must be provided in the 'Transfer Option' section of the 'Distributor' section under the 'Distribution' tab."
+                      }
+                    }
+                  }
+                }
+              },
+              "required": [
+                "contact",
+                "transferOption"
+              ],
+              "errorMessage": {
+                "required": {
+                  "contact": "Provide a contact for distribution in the 'Distributor' section under the 'Distribution' tab.",
+                  "transferOption": "A transfer option must be provided for distribution in the 'Distributor' section under the 'Distribution' tab."
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "distributor"
+        ],
+        "errorMessage": {
+          "required": {
+            "distributor": "Provide a distributor under the 'Distribution' tab."
+          }
+        }
+      }
+    },
+    "AssociatedResource": {
+      "items": {
+        "properties": {
+          "associationType": {},
+          "resourceCitation": {}
+        },
+        "required": [
+          "associationType",
+          "resourceCitation"
+        ],
+        "errorMessage": {
+          "required": {
+            "associationType": "Data products with associations must have an association type listed under the 'Associations' tab.",
+            "resourceCitation": "Provide the citation information for the associated resource under the 'Associations' tab."
+          }
+        }
+      },
+      "contains": {
+        "properties": {
+          "associationType": {
+            "const": "parentProject",
+            "errorMessage": {
+              "const": "At least one association type must be parentProject under the 'Associations' tab."
+            }
+          }
+        }
+      }
+    }
+  }
+}

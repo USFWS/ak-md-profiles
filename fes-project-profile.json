@@ -2,16 +2,14 @@
   "identifier": "fesproj",
   "namespace": "gov.fws.profile",
   "alternateId": ["fesproj"],
-  "title": "FES Project",
-  "description": "Document a project, to be associated with the project's products. Modified for use by the USFWS Alaska Region staff.",
-  "version": "1.0.1",
+  "title": "FES Project Profile",
+  "description": "Document a project, to be associated with the project's products. Modified for use by the USFWS Alaska Region FES staff.",
+  "version": "2.0.0",
   "components": {
     "record": {
       "main": {
         "basicInformation": {
           "recordId": false,
-          "title": {},
-          "status": {},
           "defaultLocale": false
         },
         "resourceType": {
@@ -71,8 +69,8 @@
         "alternateMetadataReference": false
       },
       "extent": {
+        "description": false,
         "geographic": {
-          "description": false,
           "containsData": false
         }
       },
@@ -119,9 +117,7 @@
         "graphic": false,
         "responsibleParty": false
       }
-    },
-    "contact": {},
-    "dictionary": {}
+    }
   },
   "nav": {
     "record": [
@@ -149,6 +145,11 @@
         "title": "Taxonomy",
         "target": "record.show.edit.taxonomy",
         "tip": "Information on the taxa associated with the project."
+      },
+      {
+        "title": "Funding",
+        "target": "record.show.edit.funding",
+        "tip": "Information about funding allocated to development of the resource."
       },
       {
         "title": "Associated",

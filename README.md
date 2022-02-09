@@ -8,7 +8,7 @@ When editing a record, a [Profile Selection](https://guide.mdeditor.org/tutorial
 
 For more information see the mdEditor [Core Profile Definitions](https://adiwg.github.io/mdProfiles/) page.
 
-See the [List of Alaska Profiles](ak-profile-list) for the current profile URL's.
+See the [List of Alaska Profiles](./ak-profile-list) for the current profile URL's.
 
 # Contents
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->

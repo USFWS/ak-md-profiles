@@ -4,10 +4,11 @@ The [mdEditor](mdEditor) is designed to support creating metadata for a wide var
 
 The mdEditor defaults to the "Full Profile" when a metadata record is first created, displaying all available menus and data entry fields.
 
-When editing a record, a [Profile Seletion](https://guide.mdeditor.org/tutorial/editor-window-parts/primary-navigation.html#profile) field is displayed on the mdEditor [Primary Navigation Bar](https://guide.mdeditor.org/tutorial/editor-window-parts/primary-navigation.html). A selected profile will remain associated with metadata record unless changed during a subsequent edit session.
+When editing a record, a [Profile Selection](https://guide.mdeditor.org/tutorial/editor-window-parts/primary-navigation.html#profile) field is displayed on the mdEditor [Primary Navigation Bar](https://guide.mdeditor.org/tutorial/editor-window-parts/primary-navigation.html). A selected profile will remain associated with metadata record unless changed during a subsequent edit session.
 
 For more information see the mdEditor [Core Profile Definitions](https://adiwg.github.io/mdProfiles/) page.
 
+See the [List of Alaska Profiles](ak-profile-list) for the current profile URL's.
 
 # Contents
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->

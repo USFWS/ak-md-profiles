@@ -9,6 +9,6 @@ This page provides URL's for current Alaska Region Profiles.
   - FES product profile: [fes-product-profile.json](fes-product-profile.json)
   - FES project profile: [fes-project-profile.json](fes-project-profile.json)
 
-## NWRS product
+## NWRS Profiles
   - NWRS product profile: [ak-nwrs-prod.json](ak-nwrs-prod.json)
   - NWRS project profile: [ak-nwrs-proj.json](ak-nwrs-proj.json)

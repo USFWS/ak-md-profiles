@@ -1,12 +1,12 @@
 {
-	"identifier": "ak-nwrs-dict-test",
+	"identifier": "ak-nwrs-dict",
 	"namespace": "gov.fws.profile",
 	"alternateId": [
 		"ak-nwrs-prod"
 	],
 	"title": "AK Refuge Data Dictionary",
 	"description": "A data dictionary associated with a product within the Alaska National Wildlife Refuge System.",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"components": {
 		"dictionary": {
 			"main": {
@@ -68,10 +68,10 @@
 						"caseSensitive": {},
 						"fieldWidth": {},
 						"missingValue": {},
-						"minValue": false,
-						"maxValue": false
+						"minValue": {},
+						"maxValue": {}
 					},
-					"valueRange": {},
+					"valueRange": false,
 					"timePeriod": false,
 					"attributeReference": false
 				},

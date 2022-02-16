@@ -1,0 +1,155 @@
+{
+	"identifier": "ak-nwrs-dict-test",
+	"namespace": "gov.fws.profile",
+	"alternateId": [
+		"ak-nwrs-prod"
+	],
+	"title": "AK Refuge Data Dictionary",
+	"description": "A data dictionary associated with a product within the Alaska National Wildlife Refuge System.",
+	"version": "1.0.0",
+	"components": {
+		"dictionary": {
+			"main": {
+				"basicInformation": {
+					"functionalLanguage": false
+				},
+				"recommendedUse": false,
+				"locale": false
+			},
+			"citation": {
+				"basicInformation": {
+					"alternateTitle": false,
+					"presentationForm": false,
+					"dates": {
+						"dateItem": {
+							"description": false
+						}
+					},
+					"edition": false
+				},
+				"onlineResource": false,
+				"identifier": false,
+				"identifierSimple": false,
+				"identifierShort": false,
+				"series": false,
+				"otherCitationDetails": false,
+				"graphic": false
+			},
+			"entity": {
+				"information": {},
+				"identifier": false,
+				"codeName": {},
+				"definition": {},
+				"commonName": false,
+				"alias": false,
+				"structure": {
+					"fieldSeparatorCharacter": {},
+					"numberOfHeaderLines": {},
+					"quoteCharacter": {}
+				},
+				"keys": {},
+				"index": {},
+				"entityReference": false,
+				"attribute": {
+					"name": {},
+					"dataType": {},
+					"definition": {},
+					"allowNull": {},
+					"information": {
+						"codeName": {},
+						"definition": {},
+						"dataType": {},
+						"allowNull": {},
+						"commonName": false,
+						"domain": {},
+						"alias": false,
+						"units": {},
+						"unitsResolution": {},
+						"caseSensitive": {},
+						"fieldWidth": {},
+						"missingValue": {},
+						"minValue": false,
+						"maxValue": false
+					},
+					"valueRange": {},
+					"timePeriod": false,
+					"attributeReference": false
+				},
+				"citation": {
+					"onlineResource": {
+						"protocol": false,
+						"description": {},
+						"applicationProfile": false,
+						"protocolRequest": false
+					},
+					"identifier": {
+						"identifier": {},
+						"namespace": {},
+						"version": {},
+						"description": {},
+						"authority": {
+							"basicInformation": {
+								"alternateTitle": false,
+								"presentationForm": false,
+								"dates": {
+									"dateItem": {
+										"description": false
+									}
+								}
+							},
+							"responsibleParty": {},
+							"onlineResource": {
+								"protocol": false,
+								"description": {},
+								"applicationProfile": false,
+								"protocolRequest": false
+							},
+							"identifier": false,
+							"identifierSimple": {
+								"visible": true,
+								"authority": false,
+								"version": false,
+								"description": false
+							},
+							"identifierShort": false,
+							"series": false,
+							"otherCitationDetails": false,
+							"graphicOverview": false,
+							"graphic": false
+						}
+					}
+				}
+			},
+			"domain": {
+				"information": {
+					"commonName": false,
+					"identifier": false
+				},
+				"identifier": false,
+				"domainReference": false,
+				"domainItem": {
+					"reference": false
+				}
+			}
+		}
+	},
+	"nav": {
+		"dictionary": [
+			{
+				"title": "Main",
+				"target": "dictionary.show.edit.index",
+				"tip": "Basic information about the dictionary."
+			},
+			{
+				"title": "Entities & Attributes",
+				"target": "dictionary.show.edit.entity",
+				"tip": "Information about entities (tables) and attributes (columns or fields)."
+			},
+			{
+				"title": "Domains",
+				"target": "dictionary.show.edit.domain",
+				"tip": "Information about defined value lists for attributes (columns or fields)."
+			}
+		]
+	}
+}

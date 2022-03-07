@@ -1,26 +1,15 @@
 {
-  "identifier": "akproja",
+  "identifier": "ak-region-proj",
   "namespace": "gov.fws.profile",
-  "alternateId": ["akproja"],
-  "title": "AK Project (alpha)",
-  "description": "Alaska Region basic project definition (alpha).",
-  "version": "0.0.1-alpha.1",
+  "title": "AK Region Project Profile",
+  "description": "Hides fields and navigation menu items to simplify metadata entry for USFWS Alaska Region Staff during project metadata entry.",
+  "version": "1.0.0",
   "components": {
     "record": {
       "main": {
         "basicInformation": {
           "recordId": false,
-          "title": {},
-          "status": {},
-          "defaultLocale": {
-            "language": false,
-            "characterSet": false,
-            "country": false
-          }
-        },
-        "resourceType": {
-          "resourceType": true,
-          "name": false
+          "defaultLocale": false
         },
         "citation": {
           "basicInformation": {
@@ -32,60 +21,105 @@
             "applicationProfile": false,
             "protocolRequest": false
           },
-          "identifier": {
+          "identifier": false,
+          "identifierShort": {
             "version": false,
-            "description": false,
-            "authority": {
-              "basicInformation": {
-                "alternateTitle": false
-              },
-              "onlineResource": {
-                "protocol": false,
-                "applicationProfile": false,
-                "protocolRequest": false
-              },
-              "identifier": false
-            }
+            "description": false
           },
+          "series" :false,
           "otherCitationDetails": false,
           "graphic": false
         },
-        "purpose": false,
         "supplementalInfo": false,
         "environmentDescription": false,
         "timePeriod": {
           "identifier": false,
-          "description": false,
           "periodName": false,
           "interval": false,
           "duration": false
         },
-        "maintenance": false,
+        "maintenance": {
+          "dates": false,
+          "contact": false,
+          "scope": false,
+          "note": false
+        },
         "graphicOverview": false,
         "credit": false
       },
       "metadata": {
         "metadataIdentifier": false,
         "parentMetadata": false,
-        "onlineResource": true,
-        "repositories": false,
-        "maintenance": {
-          "frequency": true,
-          "dates": false,
-          "contact": false,
-          "note": false,
-          "scope": false
-        },
+        "onlineResource": false,
+        "maintenance": false,
         "defaultLocale": false,
         "alternateMetadataReference": false
       },
       "extent": {
+        "description": false,
         "geographic": {
-          "description": false,
           "containsData": false
         }
       },
+      "taxonomy": {
+        "collection": {
+          "taxonomicSystem": {
+            "citation": {
+              "onlineResource": {
+                "protocol": false,
+                "applicationProfile": false,
+                "protocolRequest": false
+              },
+              "identifier": false,
+              "identifierSimple": {
+                "version": false,
+                "description": false,
+                "authority": false
+              },
+              "identifierShort": false,
+              "series": false,
+              "otherCitationDetails": false,
+              "graphic": false
+            }
+          }
+        }
+      },
+      "distribution": {
+        "distributor": {
+          "transferOption": {
+            "transferSize": false,
+            "distributionUnit": false,
+            "onlineOption": {
+              "protocol": false,
+              "applicationProfile": false,
+              "protocolRequest": false
+            },
+            "offlineOption": false,
+            "distributionFormat": false,
+            "transferFrequency": false
+          },
+          "orderProcess": false
+        }
+      },
+      "funding": {
+        "fundingPeriod": {
+          "allocation": {
+            "onlineResource": {
+              "protocol": false,
+              "applicationProfile": false,
+              "protocolRequest": false
+            }
+          },
+          "timePeriod": {
+            "identifier": false,
+            "periodName": false,
+            "interval": false,
+            "duration": false
+          }
+        }
+      },
       "associated": {
+        "initiativeType": false,
         "resourceCitation": {
           "basicInformation": {
             "alternateTitle": false,
@@ -122,15 +156,8 @@
           "otherCitationDetails": false,
           "graphic": false
         }
-      },
-      "constraints": {
-        "security": false,
-        "graphic": false,
-        "responsibleParty": false
       }
-    },
-    "contact": {},
-    "dictionary": {}
+    }
   },
   "nav": {
     "record": [
@@ -152,12 +179,22 @@
       {
         "title": "Extent",
         "target": "record.show.edit.extent",
-        "tip": "Information describing the bounds of the project."
+        "tip": "Information describing the geographic bounds of the project."
       },
       {
         "title": "Taxonomy",
         "target": "record.show.edit.taxonomy",
         "tip": "Information on the taxa associated with the project."
+      },
+      {
+        "title": "Distribution",
+        "target": "record.show.edit.distribution",
+        "tip": "Information about obtaining project resources."
+      },
+      {
+        "title": "Funding",
+        "target": "record.show.edit.funding",
+        "tip": "Information about funding allocated to development of the project."
       },
       {
         "title": "Associated",

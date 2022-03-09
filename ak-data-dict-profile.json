@@ -1,0 +1,54 @@
+{
+  "identifier": "akdatadictionary",
+  "namespace": "gov.fws.profile",
+  "title": "AK Region Data Dictionary Profile",
+  "description": "Hides fields and navigation menu items to simplify metadata entry for USFWS Alaska Region Staff during data dictionary metadata entry.",
+  "version": "1.0.0",
+  "components": {
+    "dictionary": {
+      "main": {
+        "basicInformation": {
+          "functionalLanguage": false
+        },
+        "recommendedUse": false,
+        "locale": false
+      },
+      "entity":{
+        "identifier": false,
+        "alias": false,
+        "attribute": {
+          "attributeReference": false
+        },
+        "entityReference": false
+      },
+      "domain": {
+        "information": {
+          "identifier": false
+        },
+        "domainItem": {
+          "reference": false
+        },
+        "domainReference": false
+      }
+    }
+  },
+  "nav": {
+    "dictionary": [
+      {
+        "title": "Main",
+        "target": "dictionary.show.edit.index",
+        "tip": "Basic information about the data dictionary."
+      },
+      {
+        "title": "Entities",
+        "target": "dictionary.show.edit.entity",
+        "tip": "Information about entities (tables) and attributes (columns or fields)."
+      },
+      {
+        "title": "Domains",
+        "target": "dictionary.show.edit.domain",
+        "tip": "Information about defined value lists."
+      }
+    ]
+  }
+}

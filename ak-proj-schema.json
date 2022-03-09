@@ -1,0 +1,483 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AK Region Project Schema",
+  "description": "Minimum required fields and terms for metadata written for USFWS Alaska Region projects.",
+  "$id": "ak-project-metadata.json",
+  "version": "1.0.0",
+  "properties": {
+    "metadata": {
+      "properties": {
+        "resourceInfo": {
+          "properties": {
+            "status": {
+              "items": {
+                "enum": [
+                  "completed",
+                  "onGoing",
+                  "proposed",
+                  "accepted"
+                ],
+                "errorMessage": {
+                  "enum": "Project status in the 'Basic Information' section under the 'Main' tab must be one of: 'completed', 'onGoing', 'proposed', or 'accepted'"
+                }
+              }
+            },
+            "resourceType": {
+              "items": {
+                "properties": {
+                  "type": {
+                    "const": "project",
+                    "errorMessage": {
+                      "const": "Resource type for project must be listed as 'project' in the 'Resource Types' section under the 'Main' tab. If you are creating a record for a data product, please select a different mdEditor profile."
+                    }
+                  }
+                }
+              }
+            },
+            "pointOfContact": {
+              "allOf": [
+                {
+                  "contains": {
+                    "properties": {
+                      "role": {
+                        "const": "pointOfContact",
+                        "errorMessage": {
+                          "const": "The 'Point of Contact' section under the 'Main' tab must have at least one Data Steward listed with the role 'pointOfContact'."
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "contains": {
+                    "properties": {
+                      "role": {
+                        "const": "custodian",
+                        "errorMessage": {
+                          "const": "The 'Point of Contact' section under the 'Main' tab must have at least one Data Custodian listed with the role 'custodian'."
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "contains": {
+                    "properties": {
+                      "role": {
+                        "const": "owner",
+                        "errorMessage": {
+                          "const": "The 'Point of Contact' section under the 'Main' tab must have at least one Data Trustee listed with the role 'owner'."
+                        }
+                      }
+                    }
+                  }
+                }
+              ],
+              "items": {
+                "properties": {
+                  "role": {},
+                  "party": {}
+                },
+                "required": [
+                  "role",
+                  "party"
+                ],
+                "errorMessage": {
+                  "role": "Roles must be provided in the 'Point of Contact' section under the 'Main' tab for Data Trustees (use 'owner'), Data Stewards (use 'pointOfContact'), and Data Custodians (use 'custodian').",
+                  "party": "At least one person must be assigned to each role in the 'Point of Contact' section under the 'Main' tab."
+                }
+              }
+            },
+            "citation": {
+              "properties": {
+                "title": {},
+                "date": {
+                  "items": {
+                    "properties": {
+                      "date": {},
+                      "dateType": {}
+                    },
+                    "required": [
+                      "date",
+                      "dateType"
+                    ],
+                    "errorMessage": {
+                      "required": {
+                        "date": "At least one date (e.g. acquisition, creation, revision) must be provided in the 'Citation' section under the 'Main' tab.",
+                        "dateType": "A type must be provided for dates in the 'Citation' section under the 'Main' tab."
+                      }
+                    }
+                  }
+                },
+                "responsibleParty": {
+                  "items": {
+                    "properties": {
+                      "role": {},
+                      "party": {}
+                    },
+                    "required": [
+                      "role",
+                      "party"
+                    ],
+                    "errorMessage": {
+                      "required": {
+                        "role": "At least one role must be provided in the 'Responsible Party' section of the 'Citation' section under the 'Main' tab. This should be the individual(s) or organization(s) that are associated with the project citation.",
+                        "party": "At least one person must be assigned to a role in the 'Responsible Party' section of the 'Citation' section under the 'Main' tab."
+                      }
+                    }
+                  }
+                },
+                "onlineResource": {
+                  "items": {
+                    "required": [
+                      "uri"
+                    ],
+                    "errorMessage": {
+                      "required": {
+                        "uri": "If providing an online resource for a project, a URI for the project homepage must be provided in the 'Online Resource' section of the 'Citation' section under the 'Main' tab. This should be a link for browsing rather than a direct download link."
+                      }
+                    }
+                  }
+                },
+                "identifier": {
+                  "items": {
+                    "properties": {
+                      "identifier": {},
+                      "namespace": {}
+                    },
+                    "required": [
+                      "identifier",
+                      "namespace"
+                    ],
+                    "errorMessage": {
+                      "required": {
+                        "identifier": "Provide an identifier (e.g. Digital Object Identifier (DOI), ISBN, UUID) for the product in the 'Citation' section under the 'Main' tab.",
+                        "namespace": "Provide the context (i.e. namespace) for the product identifier in the 'Citation' section under the 'Main' tab."
+                      }
+                    }
+                  }
+                }
+              },
+              "required": [
+                "title",
+                "date",
+                "responsibleParty"
+              ],
+              "errorMessage": {
+                "required": {
+                  "title": "A short, descriptive project title must be provided in the 'Basic Information' section under the 'Main' tab.",
+                  "date": "At least one date (e.g. award, start, revision) must be provided in the 'Citation' section under the 'Main' tab.",
+                  "responsibleParty": "At least one Responsible Party associated with the project's citation must be provided in the 'Citation' section under the 'Main' tab."
+                }
+              }
+            },
+            "abstract": {},
+            "timePeriod": {
+              "oneOf": [
+                {
+                  "properties": {
+                    "startDateTime": {},
+                    "endDateTime": {}
+                  },
+                  "anyOf": [
+                    {
+                      "required": [
+                        "startDateTime"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "endDateTime"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "errorMessage": {
+                "oneOf": "A start date and/or an end date must be provided for this project in the 'Time Period' section under the 'Main' tab."
+              }
+            },
+            "keyword": {
+              "items": {
+                "properties": {
+                  "keyword": {},
+                  "thesaurus": {}
+                },
+                "required": [
+                  "keyword",
+                  "thesaurus"
+                ],
+                "errorMessage": {
+                  "required": {
+                    "keyword": "At least one keyword must be provided from each selected thesaurus under the 'Keywords' tab.",
+                    "thesaurus": "At least one keyword must be provided from the Global Change Master Directory (GCMD) Science Keywords thesaurus under the 'Keywords' tab."
+                  }
+                }
+              },
+              "contains": {
+                "properties": {
+                  "thesaurus": {
+                    "properties": {
+                      "title": {
+                        "const": "Global Change Master Directory (GCMD) Science Keywords",
+                        "errorMessage": {
+                          "const": "At least one keyword under the 'Keywords' tab must be from the Global Change Master Directory (GCMD) Science Keywords thesaurus."
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "status",
+            "resourceType",
+            "pointOfContact",
+            "citation",
+            "abstract",
+            "timePeriod",
+            "keyword"
+          ],
+          "errorMessage": {
+            "required": {
+              "status": "The current project status must be provided in the 'Basic Information' section under the 'Main' tab. Status must be one of: 'completed', 'onGoing', 'proposed', or 'accepted'",
+              "resourceType": "Resource type must be provided in the 'Resource Types' section under the 'Main' tab. The resource type for projects must be 'project'.",
+              "pointOfContact": "Project personnel must be provided in the 'Point of Contact' section under the 'Main' tab.",
+              "abstract": "Project abstract must be provided in the 'Description' section under the 'Main' tab. Abstracts should summarize the project's purpose and goals.",
+              "timePeriod": "Project time period must be provided in the 'Time Period' section under the 'Main' tab. At least a project start date and/or a project end date must be provided.",
+              "keyword": "Project keywords must be provided under the 'Keywords' tab. At least one keyword must be provided from the 'Global Change Master Directory (GCMD) Science Keywords' thesaurus."
+            }
+          }
+        },
+        "metadataInfo": {
+          "properties": {
+            "metadataStatus": {},
+            "metadataDate": {
+              "items": {
+                "properties": {
+                  "date": {},
+                  "dateType": {}
+                },
+                "required": [
+                  "date",
+                  "dateType"
+                ],
+                "errorMessage": {
+                  "required": {
+                    "date": "At least a creation date for the metadata must be provided in the 'Basic Information' section under the 'Metadata' tab.",
+                    "dateType": "A date type must be provided for dates associated with the metadata in the 'Basic Information' section under the 'Metadata' tab. At least one date should have the type 'creation'."
+                  }
+                }
+              },
+              "contains": {
+                "properties": {
+                  "dateType": {
+                    "const": "creation",
+                    "errorMessage": {
+                      "const": "A creation date for the metadata must be provided in the 'Basic Information' section under the 'Metadata' tab."
+                    }
+                  }
+                }
+              }
+            },
+            "metadataContact": {
+              "allOf": [
+                {
+                  "contains": {
+                    "properties": {
+                      "role": {
+                        "const": "author",
+                        "errorMessage": "At least one metadata contact must have the role 'author' under the 'Metadata Contacts' section of the 'Metadata' tab."
+                      }
+                    }
+                  }
+                },
+                {
+                  "contains": {
+                    "properties": {
+                      "role": {
+                        "const": "pointOfContact",
+                        "errorMessage": "At least one metadata contact must have the role 'pointOfContact' under the 'Metadata Contacts' section of the 'Metadata' tab."
+                      }
+                    }
+                  }
+                }
+              ],
+              "items": {
+                "properties": {
+                  "role": {},
+                  "party": {}
+                },
+                "required": [
+                  "role",
+                  "party"
+                ],
+                "errorMessage": {
+                  "required": {
+                    "role": "A role must be provided in the 'Metadata Contacts' section under the 'Metadata' tab.",
+                    "party": "A contact must be provided in the 'Metadata Contacts' section under the 'Metadata' tab."
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "metadataStatus",
+            "metadataDate",
+            "metadataContact"
+          ],
+          "errorMessage": {
+            "required": {
+              "metadataStatus": "The status of the metadata (e.g. onGoing, completed), must be provided in the 'Basic Information' section under the 'Metadata' tab.",
+              "metadataDate": "A creation date for the metadata must be provided in the 'Basic Information' section under the 'Metadata' tab.",
+              "metadataContact": "An author and a pointOfContact for the metadata must be provided in the 'Metadata Contact' section under the 'Metadata' tab."
+            }
+          }
+        },
+        "resourceDistribution": {
+          "items": {
+            "properties": {
+              "distributor": {
+                "items": {
+                  "properties": {
+                    "contact": {
+                      "properties": {
+                        "role": {
+                          "const": "distributor",
+                          "errorMessage": {
+                            "const": "Role for distributor in the 'Distributor' section under the 'Distribution' tab must be 'distributor'."
+                          }
+                        },
+                        "party": {}
+                      },
+                      "required": [
+                        "role",
+                        "party"
+                      ],
+                      "errorMessage": {
+                        "required": {
+                          "role": "Indicate 'distributor' as the role for the product distributor under the 'Distribution' tab.",
+                          "party": "Indicate the organization that will distribute the product as the contact under the 'Distribution' tab."
+                        }
+                      }
+                    },
+                    "transferOption": {
+                      "items": {
+                        "properties": {
+                          "onlineOption": {
+                            "items": {
+                              "properties": {
+                                "uri": {}
+                              },
+                              "required": [
+                                "uri"
+                              ],
+                              "errorMessage": {
+                                "required": {
+                                  "uri": "A URI must be provided for an online option to access the resource under the 'Transfer Option' section of the 'Distributor' section under the 'Distribution' tab. The URI should link to either the direct download (URI that will automatically start a download) or the link to page where you can download the resource."
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "required": [
+                          "onlineOption"
+                        ],
+                        "errorMessage": {
+                          "required": {
+                            "onlineOption": "An online option for distribution must be provided in the 'Transfer Option' section of the 'Distributor' section under the 'Distribution' tab."
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "contact",
+                    "transferOption"
+                  ],
+                  "errorMessage": {
+                    "required": {
+                      "contact": "Provide a contact for distribution in the 'Distributor' section under the 'Distribution' tab.",
+                      "transferOption": "A transfer option must be provided for distribution in the 'Distributor' section under the 'Distribution' tab."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "funding": {
+          "items": {
+            "properties": {
+              "allocation": {
+                "items": {
+                  "properties": {
+                    "amount": {},
+                    "sourceId": {},
+                    "recipientId": {}
+                  },
+                  "required": [
+                    "amount",
+                    "sourceId",
+                    "recipientId"
+                  ],
+                  "errorMessage": {
+                    "required": {
+                      "amount": "A funding amount must be provided in the 'Allocation' section under the 'Funding' tab.",
+                      "sourceId": "A funding source must be provided in the 'Allocation' section under the 'Funding' tab.",
+                      "recipientId": "A funding recipient must be provided in the 'Allocation' section under the 'Funding' tab. This recipient should always be an organization, not an individual."
+                    }
+                  }
+                }
+              },
+              "timePeriod": {}
+            },
+            "required": [
+              "allocation",
+              "timePeriod"
+            ],
+            "errorMessage": {
+              "required": {
+                "allocation": "Funding allocation must be described in the 'Allocation' section under the 'Funding' tab.",
+                "timePeriod": "The fiscal year of funding allocation (Time Period) must be provided in the 'Allocation' section under the 'Funding' tab."
+              }
+            }
+          }
+        },
+        "associatedResource": {
+          "items": {
+            "properties": {
+              "associationType": {},
+              "resourceCitation": {}
+            },
+            "required": [
+              "associationType",
+              "resourceCitation"
+            ],
+            "errorMessage": {
+              "required": {
+                "associationType": "Projects with associations must have an association type listed under the 'Associations' tab.",
+                "resourceCitation": "Provide the citation information for the associated resource under the 'Associations' tab."
+              }
+            }
+          },
+          "contains": {
+            "properties": {
+              "associationType": {
+                "const": "product",
+                "errorMessage": {
+                  "const": "At least one association type must be product under the 'Associations' tab."
+                }
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "metadataInfo",
+        "resourceInfo"
+      ]
+    }
+  }
+}

@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "FES Data Dictionary Schema",
-  "description": "Required fields and terms for metadata written for USFWS Alaska Region data dictionaries.",
-  "$id": "data-dict-schema.json",
+  "title": "AK Region Dictionary Dictionary Schema",
+  "description": "Minimum required fields and terms for metadata written for USFWS Alaska Region data dictionaries.",
+  "$id": "ak-data-dict-schema.json",
   "version": "1.0.0",
   "properties": {
     "dataDictionary": {
@@ -10,12 +10,7 @@
         "subject": {},
         "responsibleParty": {
           "properties": {
-            "role": {
-              "const": "pointOfContact",
-              "errorMessage": {
-                "const": "The role for the 'Responsible Party' under the 'Main' tab must be 'pointOfContact'."
-              }
-            },
+            "role": {},
             "party": {}
           },
           "required": [
@@ -24,54 +19,21 @@
           ],
           "errorMessage": {
             "required": {
-              "role": "A contact must be provided for the data dictionary with the role 'pointOfContact' in the 'Responsible Party' section under the 'Main' tab.",
+              "role": "A role for a contact must be provided for the data dictionary in the 'Responsible Party' section under the 'Main' tab.",
               "party": "A contact must be provided for the data dictionary in the 'Responsible Party' section under the 'Main' tab."
             }
           }
         },
         "citation": {
           "properties": {
-            "title": {},
-            "date": {
-              "items": {
-                "properties": {
-                  "date": {},
-                  "dateType": {}
-                },
-                "required": [
-                  "date",
-                  "dateType"
-                ],
-                "errorMessage": {
-                  "required": {
-                    "date": "A date must be provided in the 'Basic Information' section under the 'Citation' tab.",
-                    "dateType": "A date type must be provided for a date in the 'Basic Information' section under the 'Citation' tab. At least one date type must be 'creation'."
-                  }
-                }
-              },
-              "contains": {
-                "properties": {
-                  "dateType": {
-                    "const": "creation",
-                    "errorMessage": {
-                      "const": "At least one date type must be 'creation' in the 'Basic Information' section under the 'Citation' tab."
-                    }
-                  }
-                }
-              }
-            },
-            "responsibleParty": {}
+            "title": {}
           },
           "required": [
-            "title",
-            "date",
-            "responsibleParty"
+            "title"
           ],
           "errorMessage": {
             "required": {
-              "title": "A title must be provided for the data dictionary in the 'Basic Information' section under the 'Main' tab.",
-              "date": "A date (e.g. creation, revision) must be provided for the data dictionary in the 'Basic Information' section under the 'Citation' tab.",
-              "responsibleParty": "Responsible parties must be provided for the data dictionary under the 'Citation' tab."
+              "title": "A title must be provided for the data dictionary in the 'Basic Information' section under the 'Main' tab."
             }
           }
         },
@@ -137,7 +99,7 @@
                   ],
                   "errorMessage": {
                     "required": {
-                      "codeName": "Provide a code name used to identify an attribute in the 'Attributes' section under the 'Entities' tab. Most often this will be the table or speadsheet column name.",
+                      "codeName": "Provide an attribute name (code name) used to identify an attribute in the 'Attributes' section under the 'Entities' tab. Most often this will be the table or speadsheet column name.",
                       "definition": "Provide a succinct but comprehensive definition for the attribute in the 'Attributes' section under the 'Entities' tab.",
                       "dataType": "Provide a data type for the attribute in the 'Attributes' section under the 'Entities' tab.",
                       "allowNull": "Indicate whether null values are allowed for an attribute in the 'Attributes' section under the 'Entities' tab."
@@ -171,7 +133,7 @@
         "required": {
           "subject": "A resource type must be provided for the subject of the data dictionary in the 'Basic Information' section under the 'Main' tab.",
           "responsibleParty": "A point of contact must be provided for the data dictionary in the 'Responsible Party' section under the 'Main' tab.",
-          "citation": "Citation information must be provided for the data dictionary under the 'Citation' tab.",
+          "citation": "A title must be provided for the data dictionary under the 'Basic Information' section of the 'Main' tab.",
           "entity": "Information about entities (tables) and attributes (columns or fields) must be provided under the 'Entities' tab."
         }
       }

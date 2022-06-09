@@ -93,6 +93,43 @@ Changes made to a existing profile may not be reflected until the editor is relo
     File name: ak-prod-a.json
     url: https://raw.githubusercontent.com/USFWS/ak-md-profiles/main/ak-prod-a.json
 
+## Alaska Region project definition (production version)
+		File name: ak-proj-profile.json
+		url:https://raw.githubusercontent.com/USFWS/ak-md-profiles/main/ak-proj-profile.json
+
+## Alaska Region product definition (production version)
+		File name: ak-prod-profile.json
+		url: https://raw.githubusercontent.com/USFWS/ak-md-profiles/main/ak-prod-profile.json
+
+## Alaska Region data dictionary definition (production version)
+		File name: ak-data-dict-profile.json
+		url: https://raw.githubusercontent.com/USFWS/ak-md-profiles/main/ak-data-dict-profile.json
+
+## NWRS project definition
+		File name: ak-nwrs-proj.json
+		url: https://raw.githubusercontent.com/USFWS/ak-md-profiles/main/ak-nwrs-proj.json
+
+## NWRS product definition
+		File name: ak-nwrs-prod.json
+		url: https://raw.githubusercontent.com/USFWS/ak-md-profiles/main/ak-nwrs-prod.json
+
+## NWRS data dictionary definition
+		File name: ak-nwrs-dict.json
+		url: https://raw.githubusercontent.com/USFWS/ak-md-profiles/main/ak-nwrs-dict.json
+
+# Currently available Alaska Region schemas
+
+## Alaska Region project schema
+		File name: ak-proj-schema.json
+		url: https://raw.githubusercontent.com/USFWS/ak-md-profiles/main/ak-proj-schema.json
+
+## Alaska Region product schema
+		File name: ak-prod-schema.json
+		url:https://raw.githubusercontent.com/USFWS/ak-md-profiles/main/ak-prod-schema.json
+
+## Alaska Region data dictionary schema
+		File name: ak-data-dict-schema.json
+		url: https://raw.githubusercontent.com/USFWS/ak-md-profiles/main/ak-data-dict-schema.json
 
 # References and resources
 [mdEditor](https://www.mdeditor.org/)

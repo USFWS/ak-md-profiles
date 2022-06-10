@@ -65,9 +65,8 @@
 			},
 			"extent": {
 				"description": {},
-				"geographic": {
-					"description": false,
-					"containsData": false
+				"geographic": {"description": false,
+"containsData": false
 				}
 			},
 			"lineage": {

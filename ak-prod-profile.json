@@ -3,7 +3,7 @@
     "namespace": "gov.fws.profile",
     "title": "AK Region Product Profile",
     "description": "Hides fields and navigation menu items to simplify metadata entry for USFWS Alaska Region Staff during product metadata entry.",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "components": {
       "record": {
         "main": {
@@ -39,8 +39,17 @@
           },
           "maintenance": {
             "frequency": true,
-            "dates": false,
-            "contact": false,
+            "dates": {
+                "dateItem": {
+                    "date": false,
+                    "dateType": false,
+                    "description": false
+                }
+            },
+            "contact": {
+                "role": false,
+                "contacts": false
+            },
             "note": true,
             "scope": false
         },
@@ -49,7 +58,108 @@
         },
         "metadata": {
           "metadataIdentifier": false,
-          "parentMetadata": false,
+          "parentMetadata": {
+            "basicInformation": {
+              "title": true,
+              "alternateTitle": false,
+              "dates": {
+                "dateItem": {
+                  "date": false,
+                  "dateType": false,
+                  "description": false
+                }
+              },
+              "edition": false,
+              "presentationForm": false
+            },
+            "responsibleParty": {
+              "role": false,
+              "contacts": false
+            },
+            "onlineResource": {
+              "name": false,
+              "url": false,
+              "protocol": false,
+              "description": false,
+              "onlineFunction": false,
+              "applicationProfile": false,
+              "protocolRequest": false
+            },
+            "identifier": {
+              "identifier": true,
+              "namespace": true,
+              "version": false,
+              "description": false,
+              "authority": {
+                "basicInformation": {
+                  "title": false,
+                  "alternateTitle": false,
+                  "dates": {
+                    "dateItem": {
+                      "date": false,
+                      "dateType": false,
+                      "description": false
+                    }
+                  }
+                },
+                "responsibleParty": {
+                  "role": false,
+                  "contacts": false
+                },
+                "onlineResource": {
+                  "name": false,
+                  "url": false,
+                  "protocol": false,
+                  "description": false,
+                  "onlineFunction": false,
+                  "applicationProfile": false,
+                  "protocolRequest": false
+                },
+                "identifier": false,
+                "identifierSimple": {
+                  "identifier": false,
+                  "namespace": false,
+                  "version": false,
+                  "description": false,
+                  "authority": {
+                    "basicInformation": {
+                      "title": false,
+                      "alternateTitle": false,
+                      "dates": false
+                    },
+                    "responsibleParty": false,
+                    "onlineResource": false,
+                    "identifier": false,
+                    "identifierSimple": false,
+                    "identifierShort": false
+                  }
+                },
+                "identifierShort": false
+              }
+            },
+            "identifierSimple": false,
+            "identifierShort": false,
+            "series": {
+              "name": false,
+              "issue": false,
+              "page": false
+            },
+            "otherCitationDetails": false,
+            "graphic": {
+              "fileName": false,
+              "fileType": false,
+              "fileDescription": false,
+              "onlineResource": {
+                "name": false,
+                "url": false,
+                "protocol": false,
+                "description": false,
+                "onlineFunction": false,
+                "applicationProfile": false,
+                "protocolRequest": false
+              }
+            }
+          },
           "onlineResource": false,
           "maintenance": false,
           "defaultLocale": false,
@@ -190,6 +300,28 @@
             "graphic": false
           },
           "metadataCitation": false
+        }
+      },
+      "dataQuality": {
+        "standaloneQualityReport": {
+            "citation": {
+                "basicInformation": {
+                  "edition": false,
+                  "presentationForm": false
+                },
+                "onlineResource": {
+                  "protocol": false,
+                  "applicationProfile": false,
+                  "protocolRequest": false
+                },
+                "identifier": false,
+                "identifierShort": {
+                  "version": false,
+                  "description": false
+                },
+                "otherCitationDetails": false,
+                "graphic": false
+              }
         }
       }
     },

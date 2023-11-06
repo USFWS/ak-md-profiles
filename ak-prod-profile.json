@@ -39,17 +39,8 @@
           },
           "maintenance": {
             "frequency": true,
-            "dates": {
-                "dateItem": {
-                    "date": false,
-                    "dateType": false,
-                    "description": false
-                }
-            },
-            "contact": {
-                "role": false,
-                "contacts": false
-            },
+            "dates": false,
+            "contact": false,
             "note": true,
             "scope": false
         },

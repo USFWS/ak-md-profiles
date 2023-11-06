@@ -691,7 +691,7 @@
           },
           "responsibleParty": {
             "role": true,
-            "contacts": true,
+            "contacts": true
           },
           "onlineResource": {
             "name": true,
@@ -1080,7 +1080,7 @@
           },
           "responsibleParty": {
             "role": false,
-            "contacts": 
+            "contacts": false
           },
           "onlineResource": {
             "name": false,
@@ -1599,5 +1599,4 @@
       }
     ]
   }
-
 }

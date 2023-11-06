@@ -3,7 +3,7 @@
   "title": "AK Region Product Schema",
   "description": "Minimum required fields and terms for metadata written for USFWS Alaska Region data products.",
   "$id": "ak-product-schema.json",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "properties": {
     "metadata": {
       "properties": {

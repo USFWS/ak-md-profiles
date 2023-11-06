@@ -129,18 +129,18 @@
                 "responsibleParty": {
                   "allOf": [
                     {
-                      "contains": {
-												"properties": {
-													"role": {
-														"const": "publisher",
-														"errorMessage": {
-															"const": "A responsible party with the role of 'publisher' mut be listed in the 'Citation' section under the 'Main' tab."
-														}
-													}
-												}
-											}
-                    }
-                  ]
+			    "contains": {
+				     "properties": {
+					     "role": {
+						      "const": "publisher",
+						     "errorMessage": {
+							     "const": "A responsible party with the role of 'publisher' must be listed in the 'Citation' section under the 'Main' tab."
+							     }
+						     }
+					     }
+				    }
+			    }
+			  ]
                 },
                 "identifier": {
                   "items": {
@@ -170,7 +170,7 @@
                 "required": {
                   "title": "A short, descriptive product title must be provided in the 'Basic Information' section under the 'Main' tab. Product titles should be uniquely identifiable.",
                   "date": "At least one date (e.g. acquisition, creation, revision) must be provided in the 'Citation' section under the 'Main' tab.",
-                  "responsibleParty": "A responsible party with the role of 'publisher' mut be listed in the 'Citation' section under the 'Main' tab."
+                  "responsibleParty": "A responsible party with the role of 'publisher' must be listed in the 'Citation' section under the 'Main' tab."
                 }
               }
             },

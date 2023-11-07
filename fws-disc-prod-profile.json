@@ -169,7 +169,6 @@
           "containsData": false
         }
       },
-      "spatial": false,
       "lineage": {
         "statement": true,
         "processStep": {
@@ -434,9 +433,7 @@
           "name": true
         },
         "metadataCitation": false
-      },
-      "documents": false,
-      "funding": false
+      }
     },
     "dictionary": {
       "main": {

@@ -366,28 +366,11 @@
                 "numberOfVolumes": true,
                 "format": true
               },
-              "identifier": {
-                "identifier": false,
-                "namespace": false,
-                "version": false,
-                "description": false
-              },
+              "identifier": false,
               "note": true
             },
-            "distributionFormat": {
-              "name": false,
-              "version": false,
-              "compressionMethod": false,
-              "url": false
-            },
-            "transferFrequency": {
-              "years": false,
-              "months": false,
-              "days": false,
-              "hours": false,
-              "minutes": false,
-              "seconds": false
-            }
+            "distributionFormat": false,
+            "transferFrequency": false
           },
           "orderProcess": {
             "fees": true,

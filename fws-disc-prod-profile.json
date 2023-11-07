@@ -169,74 +169,8 @@
           "containsData": false
         }
       },
-      "spatial": {
-        "spatialRepresentationType": false,
-        "spatialReferenceSystem": {
-          "referenceSystemType": false,
-          "referenceSystemIdentifier": {
-            "identifier": false,
-            "namespace": false,
-            "version": false,
-            "description": false,
-            "authority": {
-              "basicInformation": {
-                "title": false,
-                "alternateTitle": false,
-                "dates": {
-                  "dateItem": {
-                    "date": false,
-                    "dateType": false,
-                    "description": false
-                  }
-                }
-              },
-              "responsibleParty": {
-                "role": false,
-                "contacts": false
-              },
-              "onlineResource": {
-                "name": false,
-                "url": false,
-                "protocol": false,
-                "description": false,
-                "onlineFunction": false,
-                "applicationProfile": false,
-                "protocolRequest": false
-              },
-              "identifier": false,
-              "identifierSimple": {
-                "identifier": false,
-                "namespace": false,
-                "version": false,
-                "description": false,
-                "authority": {
-                  "basicInformation": {
-                    "title": false,
-                    "alternateTitle": false,
-                    "dates": false
-                  },
-                  "responsibleParty": false,
-                  "onlineResource": false,
-                  "identifier": false,
-                  "identifierSimple": false,
-                  "identifierShort": false
-                }
-              },
-              "identifierShort": false
-            }
-          }
-        },
-        "spatialResolution": {
-          "scaleFactor": false,
-          "levelOfDetail": false,
-          "measure": {
-            "type": false,
-            "value": false,
-            "units": false
-          }
-        }
-      },  
-        "lineage": {
+      "spatial": false,
+      "lineage": {
         "statement": true,
         "processStep": {
           "stepId": false,
@@ -279,52 +213,6 @@
               "role": true,
               "contacts": true
             },
-            "onlineResource": true,
-            "identifier": false,
-            "identifierSimple": {
-              "identifier": true,
-              "namespace": true,
-              "version": false,
-              "description": false,
-              "authority": {
-                "basicInformation": {
-                  "title": false,
-                  "alternateTitle": false,
-                  "dates": false
-                },
-                "responsibleParty": false,
-                "onlineResource": {
-                    "protocol": false,
-                    "applicationProfile": false,
-                    "protocolRequest": false
-                  },
-                "identifier": false,
-                "identifierSimple": {
-                    "version": false,
-                    "description": false,
-                    "authority": false
-                  },
-                "identifierShort": false
-              }
-            },
-            "identifierShort": false
-          },
-          "metadataCitation": {
-            "basicInformation": {
-              "title": false,
-              "alternateTitle": false,
-              "dates": {
-                "dateItem": {
-                  "date": false,
-                  "dateType": false,
-                  "description": false
-                }
-              }
-            },
-            "responsibleParty": {
-              "role": true,
-              "contacts": true
-            },
             "onlineResource": {
               "name": true,
               "url": true,
@@ -335,56 +223,15 @@
               "protocolRequest": false
             },
             "identifier": false,
-            "identifierSimple": {
-              "identifier": true,
-              "namespace": true,
+            "identifierSimple": false,
+            "identifierShort": {
               "version": false,
-              "description": false,
-              "authority": {
-                "basicInformation": {
-                  "title": false,
-                  "alternateTitle": false,
-                  "dates": false
-                },
-                "responsibleParty": false,
-                "onlineResource": false,
-                "identifier": false,
-                "identifierSimple": false,
-                "identifierShort": false
-              }
-            },
-            "identifierShort": false
-          },
-          "referenceSystem": {
-            "referenceSystemType": false,
-            "referenceSystemIdentifier": {
-              "identifier": false,
-              "namespace": false,
-              "version": false,
-              "description": false,
-              "authority": {
-                "basicInformation": {
-                  "title": false,
-                  "alternateTitle": false,
-                  "dates": false
-                },
-                "responsibleParty": false,
-                "onlineResource": false,
-                "identifier": false,
-                "identifierSimple": false,
-                "identifierShort": false
-              }
+              "description": false
             }
           },
-          "spatialResolution": {
-            "scaleFactor": false,
-            "levelOfDetail": false,
-            "measure": {
-              "type": false,
-              "value": false,
-              "units": false
-            }
-          }
+          "metadataCitation": false,
+          "referenceSystem": false,
+          "spatialResolution": false
         },
         "citation": {
           "basicInformation": {
@@ -394,7 +241,7 @@
               "dateItem": {
                 "date": true,
                 "dateType": true,
-                "description": false
+                "description": true
               }
             },
             "edition": false,
@@ -408,63 +255,12 @@
             "name": true,
             "url": true,
             "protocol": false,
-            "description": false,
+            "description": true,
             "onlineFunction": true,
             "applicationProfile": false,
             "protocolRequest": false
           },
-          "identifier": {
-            "identifier": false,
-            "namespace": false,
-            "version": false,
-            "description": false,
-            "authority": {
-              "basicInformation": {
-                "title": false,
-                "alternateTitle": false,
-                "dates": {
-                  "dateItem": {
-                    "date": false,
-                    "dateType": false,
-                    "description": false
-                  }
-                }
-              },
-              "responsibleParty": {
-                "role": false,
-                "contacts": false
-              },
-              "onlineResource": {
-                "name": false,
-                "url": false,
-                "protocol": false,
-                "description": false,
-                "onlineFunction": false,
-                "applicationProfile": false,
-                "protocolRequest": false
-              },
-              "identifier": false,
-              "identifierSimple": {
-                "identifier": false,
-                "namespace": false,
-                "version": false,
-                "description": false,
-                "authority": {
-                  "basicInformation": {
-                    "title": false,
-                    "alternateTitle": false,
-                    "dates": false
-                  },
-                  "responsibleParty": false,
-                  "onlineResource": false,
-                  "identifier": false,
-                  "identifierSimple": false,
-                  "identifierShort": false
-                }
-              },
-              "identifierShort": false
-            }
-          },
+          "identifier": false,
           "identifierSimple": false,
           "identifierShort": {
             "version": false,
@@ -472,22 +268,9 @@
           },
           "series": false,
           "otherCitationDetails": false,
-          "graphic": {
-            "fileName": false,
-            "fileType": false,
-            "fileDescription": false,
-            "onlineResource": {
-              "name": false,
-              "url": false,
-              "protocol": true,
-              "description": true,
-              "onlineFunction": true,
-              "applicationProfile": true,
-              "protocolRequest": true
-            }
-          }
+          "graphic": false
         },
-        "scope": true
+        "scope": false
       },
       "taxonomy": {
         "collection": {
@@ -689,7 +472,7 @@
               "dateItem": {
                 "date": true,
                 "dateType": true,
-                "description": false
+                "description": true
               }
             },
             "edition": false,

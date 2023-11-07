@@ -83,7 +83,7 @@
               },
               "identifier": false,
               "identifierSimple": false,
-              "identifierShort": true
+              "identifierShort": false
             }
           },
           "identifierSimple": {
@@ -106,8 +106,8 @@
             }
           },
           "identifierShort": {
-            "version": true,
-            "description": true
+            "version": false,
+            "description": false
           },
           "series": {
             "name": false,
@@ -237,25 +237,25 @@
               "protocolRequest": false
             },
             "identifier": false,
-            "identifierSimple": {
-              "identifier": false,
-              "namespace": false,
-              "version": false,
-              "description": false,
-              "authority": {
-                "basicInformation": {
-                  "title": false,
-                  "alternateTitle": false,
-                  "dates": false
+                "identifierSimple": {
+                  "identifier": false,
+                  "namespace": false,
+                  "version": false,
+                  "description": false,
+                  "authority": {
+                    "basicInformation": {
+                      "title": false,
+                      "alternateTitle": false,
+                      "dates": false
+                    },
+                    "responsibleParty": false,
+                    "onlineResource": false,
+                    "identifier": false,
+                    "identifierSimple": false,
+                    "identifierShort": false
+                  }
                 },
-                "responsibleParty": false,
-                "onlineResource": false,
-                "identifier": false,
-                "identifierSimple": false,
                 "identifierShort": false
-              }
-            },
-            "identifierShort": false
           }
         },
         "parentMetadata": {
@@ -286,8 +286,8 @@
             "protocolRequest": false
           },
           "identifier": {
-            "identifier": false,
-            "namespace": false,
+            "identifier": true,
+            "namespace": true,
             "version": false,
             "description": false,
             "authority": {
@@ -317,9 +317,9 @@
               },
               "identifier": false,
               "identifierSimple": {
-                "identifier": true,
-                "namespace": true,
-                "version": true,
+                "identifier": false,
+                "namespace": false,
+                "version": false,
                 "description": false,
                 "authority": {
                   "basicInformation": {
@@ -359,7 +359,7 @@
               "protocolRequest": false
             }
           }
-        }, 
+        },
         "onlineResource": {
           "name": false,
           "url": false,
@@ -569,19 +569,19 @@
               "contacts": true
             },
             "onlineResource": true,
-            "identifier": true,
+            "identifier": false,
             "identifierSimple": {
               "identifier": true,
               "namespace": true,
-              "version": true,
-              "description": true,
+              "version": false,
+              "description": false,
               "authority": {
                 "basicInformation": {
                   "title": false,
                   "alternateTitle": false,
-                  "dates": true
+                  "dates": false
                 },
-                "responsibleParty": true,
+                "responsibleParty": false,
                 "onlineResource": {
                     "protocol": false,
                     "applicationProfile": false,
@@ -623,7 +623,7 @@
               "applicationProfile": false,
               "protocolRequest": false
             },
-            "identifier": true,
+            "identifier": false,
             "identifierSimple": {
               "identifier": true,
               "namespace": true,
@@ -1234,13 +1234,13 @@
             },
             "responsibleParty": true,
             "onlineResource": true,
-            "identifier": true,
+            "identifier": false,
             "identifierSimple": true,
-            "identifierShort": true
+            "identifierShort": false
           }
         },
-        "identifierSimple": true,
-        "identifierShort": true,
+        "identifierSimple": false,
+        "identifierShort": false,
         "series": {
           "name": true,
           "issue": true,
@@ -1288,9 +1288,9 @@
           "presentationForm": true,
           "responsibleParty": true,
           "onlineResource": true,
-          "identifier": true,
+          "identifier": false,
           "identifierSimple": true,
-          "identifierShort": true,
+          "identifierShort": false,
           "series": {
             "name": true,
             "issue": true,
@@ -1331,9 +1331,9 @@
             "presentationForm": true,
             "responsibleParty": true,
             "onlineResource": true,
-            "identifier": true,
+            "identifier": false,
             "identifierSimple": true,
-            "identifierShort": true,
+            "identifierShort": false,
             "series": {
               "name": true,
               "issue": true,
@@ -1356,9 +1356,9 @@
               "date": true,
               "responsibleParty": true,
               "onlineResource": true,
-              "identifier": true,
+              "identifier": false,
               "identifierSimple": true,
-              "identifierShort": true
+              "identifierShort": false
             }
           }
         }
@@ -1427,7 +1427,7 @@
                 "applicationProfile": true,
                 "protocolRequest": true
               },
-              "identifier": true,
+              "identifier": false,
               "identifierSimple": {
                 "identifier": true,
                 "namespace": true,
@@ -1446,11 +1446,11 @@
                   "identifierShort": true
                 }
               },
-              "identifierShort": true
+              "identifierShort": false
             }
           },
-          "identifierSimple": true,
-          "identifierShort": true,
+          "identifierSimple": false,
+          "identifierShort": false,
           "series": {
             "name": true,
             "issue": true,
@@ -1484,7 +1484,7 @@
             },
             "responsibleParty": true,
             "onlineResource": true,
-            "identifier": true,
+            "identifier": false,
             "identifierSimple": {
               "identifier": true,
               "namespace": true,
@@ -1497,12 +1497,12 @@
                 "date": true,
                 "responsibleParty": true,
                 "onlineResource": true,
-                "identifier": true,
+                "identifier": false,
                 "identifierSimple": true,
-                "identifierShort": true
+                "identifierShort": false
               }
             },
-            "identifierShort": true
+            "identifierShort": false
           }
         }
       }

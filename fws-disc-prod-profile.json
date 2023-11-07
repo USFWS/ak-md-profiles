@@ -11,11 +11,7 @@
           "recordId": false,
           "title": true,
           "status": true,
-          "defaultLocale": {
-            "language": false,
-            "characterSet": false,
-            "country": false
-          }
+          "defaultLocale": false
         },
         "resourceType": {
           "resourceType": true,

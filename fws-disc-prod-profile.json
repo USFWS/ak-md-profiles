@@ -418,68 +418,22 @@
             "role": true,
             "contacts": true
           },
-          "onlineResource": {
-            "name": false,
-            "url": false,
-            "protocol": false,
-            "description": false,
-            "onlineFunction": false,
-            "applicationProfile": false,
-            "protocolRequest": false
-          },
+          "onlineResource": false,
           "identifier": false,
-          "identifierSimple": {
-            "identifier": true,
-            "namespace": true,
-            "version": true,
-            "description": true,
-            "authority": {
-              "basicInformation": {
-                "title": false,
-                "alternateTitle": false,
-                "dates": false
-              },
-              "responsibleParty": true,
-              "onlineResource": true,
-              "identifier": false,
-              "identifierSimple": true,
-              "identifierShort": false
-            }
+          "identifierSimple": false,
+          "identifierShort": {
+            "version": false,
+            "description": false
           },
-          "identifierShort": false,
           "series": false,
           "otherCitationDetails": false,
-          "graphic": {
-            "fileName": false,
-            "fileType": false,
-            "fileDescription": false,
-            "onlineResource": {
-              "name": false,
-              "url": false,
-              "protocol": false,
-              "description": false,
-              "onlineFunction": false,
-              "applicationProfile": false,
-              "protocolRequest": false
-            }
-          }
+          "graphic": false
         },
         "resourceType": {
           "resourceType": true,
           "name": true
         },
-        "metadataCitation": {
-          "basicInformation": {
-            "title": false,
-            "alternateTitle": false,
-            "dates": false
-          },
-          "responsibleParty": true,
-          "onlineResource": true,
-          "identifier": false,
-          "identifierSimple": true,
-          "identifierShort": false
-        }
+        "metadataCitation": false
       },
       "documents": {
         "resourceType": {

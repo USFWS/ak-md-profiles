@@ -786,11 +786,6 @@
         "tip": "Information describing the geographic bounds of the product."
       },
       {
-        "title": "Spatial",
-        "target": "record.show.edit.spatial",
-        "tip": "Information concerning the spatial attributes of the product."
-      },
-      {
         "title": "Lineage",
         "target": "record.show.edit.lineage",
         "tip": "Information on the history and processing of the product."
@@ -814,16 +809,6 @@
         "title": "Associated",
         "target": "record.show.edit.associated",
         "tip": "Other resources with a defined relationship to the product."
-      },
-      {
-        "title": "Documents",
-        "target": "record.show.edit.documents",
-        "tip": "Other documents related to, but not defining, the product."
-      },
-      {
-        "title": "Funding",
-        "target": "record.show.edit.funding",
-        "tip": "Information about funding allocated to development of the product."
       },
       {
         "title": "Dictionaries",

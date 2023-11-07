@@ -305,45 +305,14 @@
                 "protocolRequest": false
               },
               "identifier": false,
-              "identifierSimple": {
-                "identifier": true,
-                "namespace": true,
-                "version": true,
-                "description": true,
-                "authority": {
-                  "basicInformation": {
-                    "title": true,
-                    "alternateTitle": false,
-                    "dates": false
-                  },
-                  "responsibleParty": true,
-                  "onlineResource": {
-                    "name": true,
-                    "url": true,
-                    "protocol": false,
-                    "description": true,
-                    "onlineFunction": true,
-                    "applicationProfile": false,
-                    "protocolRequest": false
-                  },
-                  "identifier": false,
-                  "identifierSimple": true,
-                  "identifierShort": false
-                }
+              "identifierSimple": false,
+              "identifierShort": {
+                "version": false,
+                "description": false
               },
-              "identifierShort": false,
-              "series": {
-                "name": false,
-                "issue": false,
-                "page": false
-              },
+              "series": false,
               "otherCitationDetails": false,
-              "graphic": {
-                "fileName": false,
-                "fileType": false,
-                "fileDescription": false,
-                "onlineResource": false
-              }
+              "graphic": false
             }
           },
           "classification": {

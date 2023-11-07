@@ -394,24 +394,8 @@
           "note": true,
           "handlingDescription": true
         },
-        "responsibleParty": {
-          "role": true,
-          "contacts": true
-        },
-        "graphic": {
-          "fileName": false,
-          "fileType": false,
-          "fileDescription": false,
-          "onlineResource": {
-            "name": false,
-            "url": false,
-            "protocol": false,
-            "description": false,
-            "onlineFunction": false,
-            "applicationProfile": false,
-            "protocolRequest": false
-          }
-        }
+        "responsibleParty": false,
+        "graphic": false
       },
       "associated": {
         "associationType": true,

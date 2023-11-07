@@ -48,83 +48,15 @@
             "applicationProfile": false,
             "protocolRequest": false
           },
-          "identifier": {
-            "identifier": false,
-            "namespace": false,
-            "version": false,
-            "description": false,
-            "authority": {
-              "basicInformation": {
-                "title": false,
-                "alternateTitle": false,
-                "date": false,
-                "dateArray": {
-                  "date": false,
-                  "dateType": false,
-                  "description": false
-                }
-              },
-              "responsibleParty": {
-                "role": false,
-                "contacts": false
-              },
-              "onlineResource": {
-                "name": false,
-                "url": false,
-                "protocol": false,
-                "description": false,
-                "onlineFunction": false,
-                "applicationProfile": false,
-                "protocolRequest": false
-              },
-              "identifier": false,
-              "identifierSimple": false,
-              "identifierShort": false
-            }
-          },
-          "identifierSimple": {
-            "identifier": false,
-            "namespace": false,
-            "version": false,
-            "description": false,
-            "authority": {
-              "basicInformation": {
-                "title": false,
-                "alternateTitle": false,
-                "date": false,
-                "dateArray": false
-              },
-              "responsibleParty": false,
-              "onlineResource": false,
-              "identifier": false,
-              "identifierSimple": false,
-              "identifierShort": false
-            }
-          },
+          "identifier": false,
+          "identifierSimple": false,
           "identifierShort": {
             "version": false,
             "description": false
           },
-          "series": {
-            "name": false,
-            "issue": false,
-            "page": false
-          },
+          "series": false,
           "otherCitationDetails": false,
-          "graphic": {
-            "fileName": false,
-            "fileType": false,
-            "fileDescription": false,
-            "onlineResource": {
-              "name": false,
-              "url": false,
-              "protocol": false,
-              "description": false,
-              "onlineFunction": false,
-              "applicationProfile": false,
-              "protocolRequest": false
-            }
-          }
+          "graphic": false
         },
         "description": {
           "abstract": true,
@@ -157,34 +89,12 @@
         },
         "maintenance": {
           "frequency": true,
-          "dates": {
-            "dateItem": {
-              "date": false,
-              "dateType": false,
-              "description": false
-            }
-          },
-          "contact": {
-            "role": false,
-            "contacts": false
-          },
-          "note": true,
+          "dates": false,
+          "contact": false,
+          "note": false,
           "scope": false
         },
-        "graphicOverview": {
-          "fileName": false,
-          "fileType": false,
-          "fileDescription": false,
-          "onlineResource": {
-            "name": false,
-            "url": false,
-            "protocol": false,
-            "description": false,
-            "onlineFunction": false,
-            "applicationProfile": false,
-            "protocolRequest": false
-          }
-        },
+        "graphicOverview": false,
         "credit": false
       },
       "metadata": {
@@ -335,11 +245,7 @@
           },
           "identifierSimple": false,
           "identifierShort": false,
-          "series": {
-            "name": false,
-            "issue": false,
-            "page": false
-          },
+          "series": false,
           "otherCitationDetails": false,
           "graphic": {
             "fileName": false,
@@ -418,11 +324,7 @@
           },
           "identifierSimple": false,
           "identifierShort": false,
-          "series": {
-            "name": false,
-            "issue": false,
-            "page": false
-          },
+          "series": false,
           "otherCitationDetails": false,
           "graphic": false
         }
@@ -755,11 +657,7 @@
             "version": false,
             "description": false
           },
-          "series": {
-            "name": false,
-            "issue": false,
-            "page": false
-          },
+          "series": false,
           "otherCitationDetails": false,
           "graphic": {
             "fileName": false,
@@ -1017,11 +915,7 @@
             }
           },
           "identifierShort": false,
-          "series": {
-            "name": false,
-            "issue": false,
-            "page": false
-          },
+          "series": false,
           "otherCitationDetails": false,
           "graphic": {
             "fileName": false,
@@ -1107,11 +1001,7 @@
             }
           },
           "identifierShort": false,
-          "series": {
-            "name": false,
-            "issue": false,
-            "page": false
-          },
+          "series": false,
           "otherCitationDetails": false,
           "graphic": {
             "fileName": false,

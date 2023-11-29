@@ -3,7 +3,7 @@
   "namespace": "gov.fws.profile",
   "title": "USFWS Discovery Project Profile",
   "description": "Displays FWS minimum discovery level project metadata fields in mdEditor.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "components": {
     "record": {
       "main": {
@@ -77,13 +77,7 @@
           "interval": false,
           "duration": false
         },
-        "maintenance": {
-          "frequency": true,
-          "dates": false,
-          "contact": false,
-          "note": false,
-          "scope": false
-        },
+        "maintenance": false,
         "graphicOverview": false,
         "credit": false
       },
@@ -147,7 +141,7 @@
         }
       },
       "extent": {
-        "description": false,
+        "description": true,
         "geographic": {
           "bbox": {
             "north": true,
@@ -248,7 +242,7 @@
       },
       "associated": {
         "associationType": true,
-        "initiativeType": true,
+        "initiativeType": false,
         "resourceCitation": {
           "basicInformation": {
             "title": true,
@@ -615,37 +609,37 @@
       {
         "title": "Main",
         "target": "record.show.edit.main",
-        "tip": "Basic information about the product."
+        "tip": "Basic information about the project."
       },
       {
         "title": "Metadata",
         "target": "record.show.edit.metadata",
-        "tip": "Information about the metadata for the product."
+        "tip": "Information about the metadata for the project."
       },
       {
         "title": "Keywords",
         "target": "record.show.edit.keywords",
-        "tip": "Terms used to describe the product"
+        "tip": "Terms used to describe the project"
       },
       {
         "title": "Extent",
         "target": "record.show.edit.extent",
-        "tip": "Information describing the geographic bounds of the product."
+        "tip": "Information describing the geographic, temporal, and vertical extent of the project."
       },
       {
         "title": "Taxonomy",
         "target": "record.show.edit.taxonomy",
-        "tip": "Information on the taxa associated with the product."
+        "tip": "Information on the taxa associated with the project."
       },
       {
         "title": "Constraints",
         "target": "record.show.edit.constraint",
-        "tip": "Information about constraints applied to the product."
+        "tip": "Information about constraints applied to the project."
       },
       {
         "title": "Associated",
         "target": "record.show.edit.associated",
-        "tip": "Other resources with a defined relationship to the product."
+        "tip": "Other resources with a defined relationship to the project."
       }
     ],
     "dictionary": [

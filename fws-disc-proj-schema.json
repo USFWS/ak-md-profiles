@@ -3,10 +3,24 @@
 	"title": "USFWS Discovery Project Profile",
 	"description": "Minimum required fields and terms for discovery level metadata written for USFWS.",
 	"$id": "fws-disc-proj-schema.json",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"properties": {
 		"metadata": {
 			"properties": {
+				"metadataInfo": {
+					"properties": {
+						"defaultMetadataLocale": {
+							"required": [
+								"language"
+							],
+							"errorMessage": {
+								"required": {
+									"language": "A language must be provided in the 'Basic Information' panel of the 'Main' tab."
+								}
+							}
+						}
+					}
+				},
 				"resourceInfo": {
 					"properties": {
 						"resourceType": {
@@ -54,36 +68,6 @@
 						"citation": {
 							"properties": {
 								"title": {},
-								"responsibleParty": {
-									"allOf": [
-										{
-											"contains": {
-												"properties": {
-													"role": {
-														"const": "publisher",
-														"errorMessage": {
-															"const": "The 'Point of Contact' section under the 'Main' tab must have at least one contact listed with the role 'publisher'."
-														}
-													}
-												}
-											}
-										}
-									],
-									"items": {
-										"properties": {
-											"role": {},
-											"party": {}
-										},
-										"required": [
-											"role",
-											"party"
-										],
-										"errorMessage": {
-											"role": "At least one role must be provided in the 'Responsible Party' section of the 'Citation' section under the 'Main' tab. This should be the individual(s) or organization(s) that are associated with the project citation.",
-											"party": "At least one contact must be assigned to a role in the 'Responsible Party' section of the 'Citation' section under the 'Main' tab."
-										}
-									}
-								},
 								"onlineResource": {
 									"items": {
 										"required": [
@@ -116,13 +100,11 @@
 								}
 							},
 							"required": [
-								"title",
-								"responsibleParty"
+								"title"
 							],
 							"errorMessage": {
 								"required": {
-									"title": "A short, descriptive project title must be provided in the 'Basic Information' section under the 'Main' tab.",
-									"responsibleParty": "At least one Responsible Party associated with the project's citation must be provided in the 'Citation' section under the 'Main' tab."
+									"title": "A short, descriptive project title must be provided in the 'Basic Information' section under the 'Main' tab."
 								}
 							}
 						},
@@ -165,20 +147,26 @@
 								"errorMessage": {
 									"required": {
 										"keyword": "At least one keyword must be provided from each selected thesaurus under the 'Keywords' tab.",
-										"thesaurus": "At least one keyword must be provided from the Global Change Master Directory (GCMD) Science Keywords thesaurus under the 'Keywords' tab."
+										"thesaurus": "At least one keyword must be provided from a controlled vocabulary thesaurus under the 'Keywords' tab."
 									}
 								}
 							},
 							"contains": {
 								"properties": {
 									"thesaurus": {
-										"properties": {
-											"title": {
-												"const": "Global Change Master Directory (GCMD) Science Keywords",
-												"errorMessage": {
-													"const": "At least one keyword under the 'Keywords' tab must be from the Global Change Master Directory (GCMD) Science Keywords thesaurus."
-												}
+										"oneOf": [
+											"properties": {
+												"title": {
+													"const": "Global Change Master Directory (GCMD) Science Keywords"
+												},
+											"properties": {
+												"title": {
+													"const": "ISO 19115 Topic Category"
+												}	
 											}
+										],
+										"errorMessage": {
+											"oneOf": "At least one keyword under the 'Keywords' tab must be from a controlled vocabulary thesaurus."
 										}
 									}
 								}
@@ -191,8 +179,7 @@
 						"citation",
 						"abstract",
 						"timePeriod",
-						"keyword",
-						"language"
+						"keyword"
 					],
 					"errorMessage": {
 						"required": {
@@ -201,7 +188,6 @@
 							"abstract": "Project abstract must be provided in the 'Description' section under the 'Main' tab. Abstracts should summarize the project's purpose and goals.",
 							"timePeriod": "Project time period must be provided in the 'Time Period' section under the 'Main' tab. At least a project start date and/or a project end date must be provided.",
 							"keyword": "Project keywords must be provided under the 'Keywords' tab. At least one keyword must be provided from the 'Global Change Master Directory (GCMD) Science Keywords' thesaurus.",
-							"language": "A language must be provided in the 'Basic Information' panel of the 'Main' tab."
 						}
 					}
 				},

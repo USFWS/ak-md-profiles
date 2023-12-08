@@ -166,25 +166,20 @@
                                     "thesaurus": {
                                         "properties": {
                                             "title": {
-                                                "const": {}
-                                            }
-                                        },
-                                        "anyOf": [
-                                            {
-                                                "properties": {
-                                                    "title": {
-                                                        "const": "Global Change Master Directory (GCMD) Science Keywords"
+                                                "oneOf": [
+                                                    {
+                                                        "const": {
+                                                            "enum": [
+                                                                "Global Change Master Directory (GCMD) Science Keywords",
+                                                                "ISO 19115 Topic Category"
+                                                            ]
+                                                        }
                                                     }
-                                                },
-                                                "properties": {
-                                                    "title": {
-                                                        "const": "ISO 19115 Topic Category"
-                                                    }
+                                                ],
+                                                "errorMessage": {
+                                                    "oneOf": "At least one keyword under the 'Keywords' tab must be from a controlled vocabulary thesaurus."
                                                 }
                                             }
-                                        ],
-                                        "errorMessage": {
-                                            "anyOf": "At least one keyword under the 'Keywords' tab must be from a controlled vocabulary thesaurus."
                                         }
                                     }
                                 }

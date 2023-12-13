@@ -1,0 +1,250 @@
+{
+  "identifier": "akproduct",
+  "namespace": "gov.fws.profile",
+  "title": "AK Region Product Profile",
+  "description": "Hides fields and navigation menu items to simplify metadata entry for USFWS Alaska Region Staff during product metadata entry.",
+  "version": "1.0.0",
+  "components": {
+    "record": {
+      "main": {
+        "basicInformation": {
+          "recordId": false,
+          "defaultLocale": false
+        },
+        "citation": {
+          "basicInformation": {
+            "edition": false,
+            "presentationForm": false
+          },
+          "onlineResource": {
+            "protocol": false,
+            "applicationProfile": false,
+            "protocolRequest": false
+          },
+          "identifier": false,
+          "identifierShort": {
+            "version": false,
+            "description": false
+          },
+          "otherCitationDetails": false,
+          "graphic": false
+        },
+        "supplementalInfo": false,
+        "environmentDescription": false,
+        "timePeriod": {
+          "identifier": false,
+          "periodName": false,
+          "interval": false,
+          "duration": false
+        },
+        "maintenance": {
+          "contact": false,
+          "dates": false,
+          "note": false,
+          "scope": false
+        },
+        "graphicOverview": false,
+        "credit": false
+      },
+      "metadata": {
+        "metadataIdentifier": false,
+        "parentMetadata": false,
+        "onlineResource": false,
+        "maintenance": false,
+        "defaultLocale": false,
+        "alternateMetadataReference": false
+      },
+      "extent": {
+        "description": false,
+        "geographic": {
+          "containsData": false
+        }
+      },
+      "lineage": {
+        "processStep": {
+          "stepId": false,
+          "timePeriod": {
+            "identifier": false,
+            "periodName": false,
+            "interval": false,
+            "duration": false,
+            "scope": false
+          },
+          "stepReference": false,
+          "scope": false
+        },
+        "source": {
+          "sourceId": false,
+          "scope": false,
+          "sourceCitation": {
+            "basicInformation": {
+              "alternateTitle": false
+            },
+            "onlineResource": {
+              "protocol": false,
+              "applicationProfile": false,
+              "protocolRequest": false
+            },
+            "identifierSimple": {
+              "version": false,
+              "description": false,
+              "authority": false
+            }
+          },
+          "metadataCitation": false,
+          "referenceSystem": false,
+          "spatialResolution": false
+        },
+        "scope": false,
+        "citation": {
+          "basicInformation": {
+            "edition": false,
+            "presentationForm": false
+          },
+          "onlineResource": {
+            "protocol": false,
+            "applicationProfile": false,
+            "protocolRequest": false
+          },
+          "identifier": false,
+          "identifierShort": {
+            "version": false,
+            "description": false
+          },
+          "otherCitationDetails": false,
+          "graphic": false
+        }
+      },
+      "taxonomy": {
+        "collection": {
+          "taxonomicSystem": {
+            "citation": {
+              "onlineResource": {
+                "protocol": false,
+                "applicationProfile": false,
+                "protocolRequest": false
+              },
+              "identifier": false,
+              "identifierSimple": {
+                "authority": {
+                  "basicInformation": {
+                    "alternateTitle": false,
+                    "dates": false
+                  },
+                  "onlineResource": {
+                    "protocol": false,
+                    "applicationProfile": false,
+                    "protocolRequest": false
+                  },
+                  "identifier": false
+                }
+              },
+              "identifierShort": false,
+              "series": false,
+              "otherCitationDetails": false,
+              "graphic": false
+            }
+          }
+        }
+      },
+      "distribution": {
+        "distributor": {
+          "transferOption": {
+            "distributionUnit": false,
+            "onlineOption": {
+              "protocol": false,
+              "applicationProfile": false,
+              "protocolRequest": false
+            },
+            "offlineOption": {
+              "storage": {
+                "density": false,
+                "units": false
+              },
+              "identifier": false
+            },
+            "transferFrequency": false,
+            "distributionFormat": false
+          },
+          "orderProcess": {
+            "plannedAvailability": false,
+            "turnaround": false
+          }
+        }
+      },
+      "constraints": {
+        "graphic": false
+      },
+      "associated": {
+        "resourceCitation": {
+          "basicInformation": {
+            "alternateTitle": false,
+            "edition": false,
+            "presentationForm": false
+          },
+          "onlineResource": false,
+          "identifierSimple": false,
+          "series": false,
+          "otherCitationDetails": false,
+          "graphic": false
+        },
+        "metadataCitation": false
+      }
+    }
+  },
+  "nav": {
+    "record": [
+      {
+        "title": "Main",
+        "target": "record.show.edit.main",
+        "tip": "Basic information about the product."
+      },
+      {
+        "title": "Metadata",
+        "target": "record.show.edit.metadata",
+        "tip": "Information about the metadata for the product."
+      },
+      {
+        "title": "Keywords",
+        "target": "record.show.edit.keywords",
+        "tip": "Terms used to describe the product."
+      },
+      {
+        "title": "Extent",
+        "target": "record.show.edit.extent",
+        "tip": "Information describing the geographic bounds of the product."
+      },
+      {
+        "title": "Lineage",
+        "target": "record.show.edit.lineage",
+        "tip": "Information on the history and processing of the product."
+      },
+      {
+        "title": "Taxonomy",
+        "target": "record.show.edit.taxonomy",
+        "tip": "Information on the taxa associated with the product."
+      },
+      {
+        "title": "Distribution",
+        "target": "record.show.edit.distribution",
+        "tip": "Information about obtaining the product."
+      },
+      {
+        "title": "Constraints",
+        "target": "record.show.edit.constraint",
+        "tip": "Information about constraints applied to the product."
+      },
+      {
+        "title": "Associated",
+        "target": "record.show.edit.associated",
+        "tip": "Other resources with a defined relationship to the product."
+      },
+      {
+        "title": "Dictionaries",
+        "target": "record.show.edit.dictionary",
+        "tip": "Data dictionaries associated with the product."
+      }
+    ]
+  },
+  "thesauri":[]
+}

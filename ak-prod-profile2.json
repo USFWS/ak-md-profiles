@@ -1,7 +1,7 @@
 {
   "identifier": "akproduct",
   "namespace": "gov.fws.profile",
-  "title": "AK Region Product Profile",
+  "title": "AK Product-2 Thesaurus",
   "description": "Hides fields and navigation menu items to simplify metadata entry for USFWS Alaska Region Staff during product metadata entry.",
   "version": "1.0.0",
   "components": {

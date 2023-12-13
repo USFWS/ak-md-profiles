@@ -1,10 +1,10 @@
 [
-  {
-    name: "AK Region Product Profile",
-    url: "https://usfws.github.io/ak-md-profiles/ak-proj-profile.json"
-  },
-  {
-    name: "AK Region Project Profile",
-    url: "https://usfws.github.io/ak-md-profiles/ak-proj-profile.json"
-  }
+{
+name: "AK Region Product Profile",
+url: "https://usfws.github.io/ak-md-profiles/ak-proj-profile.json"
+},
+{
+name: "AK Region Project Profile",
+url: "https://usfws.github.io/ak-md-profiles/ak-proj-profile.json"
+}
 ]

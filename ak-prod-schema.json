@@ -3,7 +3,7 @@
   "title": "AK Region Product Schema",
   "description": "Minimum required fields and terms for metadata written for USFWS Alaska Region data products.",
   "$id": "ak-product-schema.json",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "properties": {
     "metadata": {
       "properties": {
@@ -127,22 +127,20 @@
                   }
                 },
                 "responsibleParty": {
-                  "items": {
-                    "properties": {
-                      "role": {},
-                      "party": {}
-                    },
-                    "required": [
-                      "role",
-                      "party"
-                    ],
-                    "errorMessage": {
-                      "required": {
-                        "role": "At least one role must be provided in the 'Responsible Party' section of the 'Citation' section under the 'Main' tab.",
-                        "party": "At least one person must be assigned to a role in the 'Responsible Party' section of the 'Citation' section under the 'Main' tab."
-                      }
-                    }
-                  }
+                  "allOf": [
+                    {
+			    "contains": {
+				     "properties": {
+					     "role": {
+						      "const": "publisher",
+						     "errorMessage": {
+							     "const": "A responsible party with the role of 'publisher' must be listed in the 'Citation' section under the 'Main' tab."
+							     }
+						     }
+					     }
+				    }
+			    }
+			  ]
                 },
                 "identifier": {
                   "items": {
@@ -172,7 +170,7 @@
                 "required": {
                   "title": "A short, descriptive product title must be provided in the 'Basic Information' section under the 'Main' tab. Product titles should be uniquely identifiable.",
                   "date": "At least one date (e.g. acquisition, creation, revision) must be provided in the 'Citation' section under the 'Main' tab.",
-                  "responsibleParty": "At least one Responsible Party must be provided in the 'Citation' section under the 'Main' tab."
+                  "responsibleParty": "A responsible party with the role of 'publisher' must be listed in the 'Citation' section under the 'Main' tab."
                 }
               }
             },

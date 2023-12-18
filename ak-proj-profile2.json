@@ -1,7 +1,7 @@
 {
-  "identifier": "ak-region-proj2",
+  "identifier": "ak-region-proj-thes",
   "namespace": "gov.fws.profile",
-  "title": "AK Project-2 Thesaurus",
+  "title": "AK Project-2 with Thesaurus",
   "description": "Hides fields and navigation menu items to simplify metadata entry for USFWS Alaska Region Staff during project metadata entry.",
   "version": "1.0.0",
   "components": {

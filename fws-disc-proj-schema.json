@@ -3,7 +3,7 @@
     "title": "USFWS Discovery Project Profile",
     "description": "Minimum required fields and terms for discovery level metadata written for USFWS.",
     "$id": "fws-disc-proj-schema.json",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "properties": {
         "metadata": {
             "properties": {
@@ -168,12 +168,8 @@
                                             "title": {
                                                 "oneOf": [
                                                     {
-                                                        "const": {
-                                                            "enum": [
-                                                                "Global Change Master Directory (GCMD) Science Keywords",
-                                                                "ISO 19115 Topic Category"
-                                                            ]
-                                                        }
+                                                        "const": "Global Change Master Directory (GCMD) Science Keywords",
+                                                        "const": "ISO 19115 Topic Category"
                                                     }
                                                 ],
                                                 "errorMessage": {

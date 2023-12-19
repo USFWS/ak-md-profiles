@@ -3,7 +3,7 @@
     "title": "USFWS Discovery Project Profile",
     "description": "Minimum required fields and terms for discovery level metadata written for USFWS.",
     "$id": "fws-disc-proj-schema.json",
-    "version": "0.0.42",
+    "version": "0.0.43",
     "properties": {
         "metadata": {
             "properties": {
@@ -166,7 +166,7 @@
                                     "thesaurus": {
                                         "properties": {
                                             "title": {
-                                                "anyOf": [
+                                                "oneOf": [
                                                     {
                                                         "const": "Global Change Master Directory (GCMD) Instruments"
                                                     },
@@ -190,7 +190,7 @@
                                                     }
                                                 ],
                                                 "errorMessage": {
-                                                    "anyOf": "At least one keyword under the 'Keywords' tab must be from a controlled vocabulary thesaurus."
+                                                    "oneOf": "At least one keyword under the 'Keywords' tab must be from a controlled vocabulary thesaurus."
                                                 }
                                             }
                                         }

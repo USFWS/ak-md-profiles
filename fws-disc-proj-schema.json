@@ -3,7 +3,7 @@
     "title": "USFWS Discovery Project Profile",
     "description": "Minimum required fields and terms for discovery level metadata written for USFWS.",
     "$id": "fws-disc-proj-schema.json",
-    "version": "0.0.41",
+    "version": "0.0.42",
     "properties": {
         "metadata": {
             "properties": {
@@ -166,16 +166,31 @@
                                     "thesaurus": {
                                         "properties": {
                                             "title": {
-                                                "oneOf": [
+                                                "anyOf": [
+                                                    {
+                                                        "const": "Global Change Master Directory (GCMD) Instruments"
+                                                    },
+                                                    {
+                                                        "const": "Global Change Master Directory (GCMD) Platforms"
+                                                    },
                                                     {
                                                         "const": "Global Change Master Directory (GCMD) Science Keywords"
                                                     },
                                                     {
                                                         "const": "ISO 19115 Topic Category"
+                                                    },
+                                                    {
+                                                        "const": "Deliverable Types - Landscape Conservation Cooperatives"
+                                                    },
+                                                    {
+                                                        "const": "End User Types - Landscape Conservation Cooperatives"
+                                                    },
+                                                    {
+                                                        "const": "Project Category - Landscape Conservation Cooperatives"
                                                     }
                                                 ],
                                                 "errorMessage": {
-                                                    "oneOf": "At least one keyword under the 'Keywords' tab must be from a controlled vocabulary thesaurus."
+                                                    "anyOf": "At least one keyword under the 'Keywords' tab must be from a controlled vocabulary thesaurus."
                                                 }
                                             }
                                         }

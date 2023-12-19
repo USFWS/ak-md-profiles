@@ -3,7 +3,7 @@
     "title": "USFWS Discovery Project Profile",
     "description": "Minimum required fields and terms for discovery level metadata written for USFWS.",
     "$id": "fws-disc-proj-schema.json",
-    "version": "0.0.4",
+    "version": "0.0.41",
     "properties": {
         "metadata": {
             "properties": {
@@ -168,7 +168,9 @@
                                             "title": {
                                                 "oneOf": [
                                                     {
-                                                        "const": "Global Change Master Directory (GCMD) Science Keywords",
+                                                        "const": "Global Change Master Directory (GCMD) Science Keywords"
+                                                    },
+                                                    {
                                                         "const": "ISO 19115 Topic Category"
                                                     }
                                                 ],
@@ -196,7 +198,7 @@
                             "pointOfContact": "Project personnel must be provided in the 'Point of Contact' section under the 'Main' tab.",
                             "abstract": "Project abstract must be provided in the 'Description' section under the 'Main' tab. Abstracts should summarize the project's purpose and goals.",
                             "timePeriod": "Project time period must be provided in the 'Time Period' section under the 'Main' tab. At least a project start date and/or a project end date must be provided.",
-                            "keyword": "Project keywords must be provided under the 'Keywords' tab. At least one keyword must be provided from the 'Global Change Master Directory (GCMD) Science Keywords' thesaurus."
+                            "keyword": "Project keywords must be provided under the 'Keywords' tab. At least one keyword must be provided from a controlled vocabulary thesaurus."
                         }
                     }
                 },

@@ -3,7 +3,7 @@
     "title": "USFWS Discovery Project Profile",
     "description": "Minimum required fields and terms for discovery level metadata written for USFWS.",
     "$id": "fws-disc-proj-schema.json",
-    "version": "0.0.43",
+    "version": "0.0.44",
     "properties": {
         "metadata": {
             "properties": {
@@ -161,41 +161,101 @@
                                     }
                                 }
                             },
-                            "contains": {
-                                "properties": {
-                                    "thesaurus": {
+                            "anyOf": [
+                                {
+                                    "contains": {
                                         "properties": {
-                                            "title": {
-                                                "oneOf": [
-                                                    {
+                                            "thesaurus": {
+                                                "properties": {
+                                                    "title": {
                                                         "const": "Global Change Master Directory (GCMD) Instruments"
-                                                    },
-                                                    {
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "contains": {
+                                        "properties": {
+                                            "thesaurus": {
+                                                "properties": {
+                                                    "title": {
                                                         "const": "Global Change Master Directory (GCMD) Platforms"
-                                                    },
-                                                    {
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "contains": {
+                                        "properties": {
+                                            "thesaurus": {
+                                                "properties": {
+                                                    "title": {
                                                         "const": "Global Change Master Directory (GCMD) Science Keywords"
-                                                    },
-                                                    {
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "contains": {
+                                        "properties": {
+                                            "thesaurus": {
+                                                "properties": {
+                                                    "title": {
                                                         "const": "ISO 19115 Topic Category"
-                                                    },
-                                                    {
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "contains": {
+                                        "properties": {
+                                            "thesaurus": {
+                                                "properties": {
+                                                    "title": {
                                                         "const": "Deliverable Types - Landscape Conservation Cooperatives"
-                                                    },
-                                                    {
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "contains": {
+                                        "properties": {
+                                            "thesaurus": {
+                                                "properties": {
+                                                    "title": {
                                                         "const": "End User Types - Landscape Conservation Cooperatives"
-                                                    },
-                                                    {
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "contains": {
+                                        "properties": {
+                                            "thesaurus": {
+                                                "properties": {
+                                                    "title": {
                                                         "const": "Project Category - Landscape Conservation Cooperatives"
                                                     }
-                                                ],
-                                                "errorMessage": {
-                                                    "oneOf": "At least one keyword under the 'Keywords' tab must be from a controlled vocabulary thesaurus."
                                                 }
                                             }
                                         }
                                     }
                                 }
+                            ],
+                            "errorMessage": {
+                                "oneOf": "At least one keyword under the 'Keywords' tab must be from a controlled vocabulary thesaurus."
                             }
                         }
                     },

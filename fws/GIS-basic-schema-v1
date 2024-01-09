@@ -1,0 +1,388 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "FWS geospatial basic",
+  "title": "FWS Geospatial Basic Metadata Requirement mdEditor Schema v1",
+  "description": "Defines the required metadata elements that are specific to geospatial data. This schema validates metadata to meet the USFWS basic geospatial metadata requirements.",
+  "version": "1.0.0",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "$ref": "#/definitions/Metadata"
+    }
+  },
+  "required": [
+    "metadata"
+  ],
+  "definitions": {
+    "Metadata": {
+      "type": "object",
+      "if": {
+        "properties": {
+          "resourceInfo": {
+            "properties": {
+              "resourceType": {
+                "type": "array",
+                "contains": {
+                  "$ref": "#/definitions/ResourceType"
+                }
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "$ref": "#/definitions/Geospatial"
+      },
+      "errorMessage": {
+        "if": "Products with resource types including geographic dataset, tile, coverage, or map must meet basic metadata specifications for Geospatial resources."
+      },
+      "required": [
+        "resourceInfo"
+      ],
+      "title": "Metadata"
+    },
+
+    "ResourceType": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "enum": ["geographicDataset", "tile", "coverage", "map"]
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "title": "ResourceType"
+    },
+
+    "Geospatial": {
+      "required": ["resourceInfo", "resourceLineage"],
+      "properties": {
+        "resourceInfo": {
+          "$ref": "#/definitions/ResourceInfo"
+        }
+      },
+      "errorMessage": {
+        "required": {
+          "resourceLineage": "Geospatial processing steps should be documented in Lineage."
+        }
+      }
+    },
+
+    "ResourceInfo": {
+      "type": "object",
+      "title": "ResourceInfo",
+      "required": ["pointOfContact", 
+                    "citation", 
+                    "abstract", 
+                    "purpose", 
+                    "timePeriod", 
+                    "status", 
+                    "extent", 
+                    "spatialResolution", 
+                    "spatialReferenceSystem", 
+                    "keyword", 
+                    "resourceMaintenance",
+                    "constraint",
+                    "resourceFormat"],
+      "properties": {
+        
+        "pointOfContact":{
+              "contains": {
+                "properties": {
+                  "role": {
+                    "const": "pointOfContact",
+                    "errorMessage": {
+                      "const": "The 'Point of Contact' section under the 'Main' tab must have at least one Data Steward listed with the role 'pointOfContact'."
+                    }
+                  }
+                }
+
+             }
+        },
+
+        "status": {
+          "items": {
+            "enum": [
+              "completed",
+              "onGoing",
+              "proposed",
+              "accepted"
+            ],
+            "errorMessage": {
+              "enum": "Product status in the 'Basic Information' section under the 'Main' tab must be one of: 'completed', 'onGoing', 'proposed', or 'accepted'"
+            }
+          }
+        },
+
+        "citation": {
+            "properties": {
+              "title": {},
+              "date": {
+                "items": {
+                  "properties": {
+                    "date": {},
+                    "dateType": {
+                      "enum":["acquisition", "creation", "lastRevision", "lastUpdate", "publication"]
+                    }
+                  },
+                  "required": [
+                    "date",
+                    "dateType"
+                  ],
+                  "errorMessage": {
+                    "required": {
+                      "date": "At least one date (e.g. acquisition, creation, last revision, last update, or publication) must be provided in the 'Citation' section under the 'Main' tab.",
+                      "dateType": "A date type must be provided for dates in the 'Citation' section under the 'Main' tab."
+                    }
+                  }
+                }
+              },
+              "responsibleParty": {
+                "items": {
+                  "properties": {
+                    "role": {},
+                    "party": {}
+                  },
+                  "required": [
+                    "role",
+                    "party"
+                  ],
+                  "errorMessage": {
+                    "required": {
+                      "role": "At least one role must be provided in the 'Responsible Party' section of the 'Citation' section under the 'Main' tab.",
+                      "party": "At least one person must be assigned to a role in the 'Responsible Party' section of the 'Citation' section under the 'Main' tab."
+                    }
+                  }
+                }
+              },
+              "identifier": {
+                "items": {
+                  "properties": {
+                    "identifier": {},
+                    "namespace": {}
+                  },
+                  "required": [
+                    "identifier",
+                    "namespace"
+                  ],
+                  "errorMessage": {
+                    "required": {
+                      "identifier": "Provide an identifier (e.g. Digital Object Identifier (DOI), ISBN, UUID) for the product in the 'Citation' section under the 'Main' tab.",
+                      "namespace": "Provide the context (namespace or codespace) for the identifier in the 'Citation' section under the 'Main' tab."
+                    }
+                  }
+                }
+              }
+            },
+            "required": [
+              "title",
+              "date",
+              "responsibleParty"
+            ],
+            "errorMessage": {
+              "required": {
+                "title": "A short, descriptive product title must be provided in the 'Basic Information' section under the 'Main' tab. Product titles should be uniquely identifiable.",
+                "date": "At least one date (e.g. acquisition, creation, revision, publication) must be provided in the 'Citation' section under the 'Main' tab.",
+                "responsibleParty": "At least one Responsible Party must be provided in the 'Citation' section under the 'Main' tab."
+              }
+            }
+          },
+
+        "abstract":{
+            "type": "string",
+            "required": ["abstract"],
+            "errorMessage": "A description of the product is required."
+            },
+
+        "purpose":{
+                "type": "string",
+                "required": ["purpose"],
+                "errorMessage": "A brief purpose or summary stamtement of the product is required."
+            },
+
+        "timePeriod": {
+            "oneOf": [
+              {
+                "properties": {
+                  "startDateTime": {},
+                  "endDateTime": {}
+                },
+                "anyOf": [
+                  {
+                    "required": [
+                      "startDateTime"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "endDateTime"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "errorMessage": {
+              "oneOf": "A start date and/or an end date must be provided for this data product in the 'Time Period' section under the 'Main' tab."
+            }
+          },
+
+        "extent": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "title": "Extent",
+            "description": "Describe where the data is located and what it pertains to.",
+            "required": ["description"],
+            "properties": {
+              "geographicExtent": {
+                "type": "array",
+                "items": {
+                  "required": [
+                    "boundingBox",
+                    "geographicElement"
+                  ],
+                  "properties": {
+                    "geographicElement": {
+                      "type": "array",
+                      "title": "GeoJSON Objects",
+                      "minItems": 1,
+                      "errorMessage": "At least one geoJSON object (vector feature) is required for a Geographic Extent."
+                    }
+                  },
+                  "errorMessage": {
+                    "required": {
+                      "boundingBox": "A Bounding Box is required for each Geographic Extent.",
+                      "geographicElement": "A geoJSON vector feature footprint is required for each Geographic Extent."
+                    }
+                  }
+                }
+              },
+              "temporalExtent":{
+                "type": "array",
+                "items": {
+                "oneOf": [
+                  {
+                    "properties": {
+                      "timeInstant": {},
+                      "timePeriod": {}
+                    },
+                    "anyOf": [
+                      {
+                        "required": [
+                          "timeInstant"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "timePeriod"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "errorMessage": {
+                  "oneOf": "A temporal extent for the resource must be provided for this data product in the 'Teporal Extent' section under the 'Extent' tab."
+                }
+            },
+            "errorMessage": {
+              "required": {
+                "description": "A descriptive summary or overview of the geographical information relevant to the dataset is required for each extent."
+              }
+            }
+          }
+        },
+
+        "spatialReferenceSystem": {
+          "title": "Spatial Reference Information",
+          "type": "array",
+          "minItems": 1,
+          "description": "Information about the coordinate-based system used to represent locations on the surface of the earth (or outside the earth).",
+          "items": {
+            "required": ["referenceSystemType", "referenceSystemIdentifier"]
+          }
+        }
+       },
+    
+      "errorMessage": {
+        "required": {
+          "extent": "At least one extent is required.",
+          "spatialResolution": "Spatial Resolution information about the appropriate map scale for display of the data is required.",
+          "spatialReferenceSystem": "Spatial Reference System information is required."
+        }
+      }
+          },
+
+          "keyword": {
+            "items": {
+              "properties": {
+                "keyword": {},
+                "thesaurus": {}
+              },
+              "required": [
+                "keyword",
+                "thesaurus"
+              ],
+              "errorMessage": {
+                "required": {
+                  "keyword": "At least one keyword must be provided from each thesaurus under the 'Keywords' tab.",
+                  "thesaurus": "At least one keyword thesaurus must be provided under the 'Keywords' tab."
+                }
+              }
+            },
+            "contains": {
+              "properties": {
+                "thesaurus": {
+                  "properties": {
+                    "title": {
+                      "const": "Global Change Master Directory (GCMD) Science Keywords",
+                      "errorMessage": {
+                        "const": "At least one keyword under the 'Keywords' tab must be from the Global Change Master Directory (GCMD) Science Keywords thesaurus."
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+
+          "resourceMaintenance": { 
+            "items": {
+            "properties": {
+              "frequency": {},
+              "date": {},
+              "contact": {}
+            },
+            "required": [
+              "frequency",
+              "date",
+              "contact"
+            ],
+            "errorMessage": {
+              "required": {
+                "frequency": "The maintenance frequency must be provided under the 'Main' tab.",
+                "date": "A maintenance date should included.",
+                "contact": "A contact for maintenance should be included"
+              }
+            }
+          }
+        },
+
+        "constraint":  { 
+          "items": {
+          "properties": {
+            "useLimitation": {}
+          },
+            "required": ["useLimitation"],
+            "errorMessage": {
+              "required": "A use limitation statment is required in the Constraints Tab"
+            }
+          }
+        }
+
+
+        }
+      }
+    }
+}

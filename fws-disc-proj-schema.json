@@ -1,9 +1,9 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "USFWS Discovery Project Profile",
+    "title": "USFWS Discovery Project Schema",
     "description": "Minimum required fields and terms for discovery level metadata written for USFWS.",
     "$id": "fws-disc-proj-schema.json",
-    "version": "0.0.44",
+    "version": "1.0.0",
     "properties": {
         "metadata": {
             "properties": {
@@ -145,6 +145,28 @@
                             }
                         },
                         "keyword": {
+                            "contains": {
+                                "properties": {
+                                    "thesaurus": {
+                                        "properties": {
+                                            "title": {
+                                                "enum": [
+                                                "Global Change Master Directory (GCMD) Instruments",
+                                                "Global Change Master Directory (GCMD) Platforms",
+                                                "Global Change Master Directory (GCMD) Science Keywords",
+                                                "ISO 19115 Topic Category",
+                                                "Deliverable Types - Landscape Conservation Cooperatives",
+                                                "End User Types - Landscape Conservation Cooperatives",
+                                                "Project Category - Landscape Conservation Cooperatives"
+                                                ],
+                                                "errorMessage": {
+                                                    "enum": "At least one keyword under the 'Keywords' tab must be from a controlled vocabulary thesaurus."
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "items": {
                                 "properties": {
                                     "keyword": {},
@@ -160,102 +182,6 @@
                                         "thesaurus": "At least one keyword must be provided from a controlled vocabulary thesaurus under the 'Keywords' tab."
                                     }
                                 }
-                            },
-                            "anyOf": [
-                                {
-                                    "contains": {
-                                        "properties": {
-                                            "thesaurus": {
-                                                "properties": {
-                                                    "title": {
-                                                        "const": "Global Change Master Directory (GCMD) Instruments"
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                },
-                                {
-                                    "contains": {
-                                        "properties": {
-                                            "thesaurus": {
-                                                "properties": {
-                                                    "title": {
-                                                        "const": "Global Change Master Directory (GCMD) Platforms"
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                },
-                                {
-                                    "contains": {
-                                        "properties": {
-                                            "thesaurus": {
-                                                "properties": {
-                                                    "title": {
-                                                        "const": "Global Change Master Directory (GCMD) Science Keywords"
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                },
-                                {
-                                    "contains": {
-                                        "properties": {
-                                            "thesaurus": {
-                                                "properties": {
-                                                    "title": {
-                                                        "const": "ISO 19115 Topic Category"
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                },
-                                {
-                                    "contains": {
-                                        "properties": {
-                                            "thesaurus": {
-                                                "properties": {
-                                                    "title": {
-                                                        "const": "Deliverable Types - Landscape Conservation Cooperatives"
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                },
-                                {
-                                    "contains": {
-                                        "properties": {
-                                            "thesaurus": {
-                                                "properties": {
-                                                    "title": {
-                                                        "const": "End User Types - Landscape Conservation Cooperatives"
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                },
-                                {
-                                    "contains": {
-                                        "properties": {
-                                            "thesaurus": {
-                                                "properties": {
-                                                    "title": {
-                                                        "const": "Project Category - Landscape Conservation Cooperatives"
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            ],
-                            "errorMessage": {
-                                "oneOf": "At least one keyword under the 'Keywords' tab must be from a controlled vocabulary thesaurus."
                             }
                         }
                     },

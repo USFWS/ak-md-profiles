@@ -3,7 +3,7 @@
   "namespace": "gov.fws.profile",
   "title": "USFWS Discovery Project Profile",
   "description": "Displays FWS minimum discovery level project metadata fields in mdEditor.",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "components": {
     "record": {
       "main": {
@@ -632,9 +632,14 @@
         "tip": "Information on the taxa associated with the project."
       },
       {
-        "title": "Constraints",
-        "target": "record.show.edit.constraint",
-        "tip": "Information about constraints applied to the project."
+        "title": "Distribution",
+        "target": "record.show.edit.distribution",
+        "tip": "Information about obtaining project resources."
+      },
+      {
+        "title": "Funding",
+        "target": "record.show.edit.funding",
+        "tip": "Information about funding allocated to development of the project."
       },
       {
         "title": "Associated",

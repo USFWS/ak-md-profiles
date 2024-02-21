@@ -1,0 +1,463 @@
+{
+	"identifier": "ak-nwrs-prod",
+	"namespace": "gov.fws.profile",
+	"alternateId": [
+		"ak-nwrs-prod"
+	],
+	"title": "AK Refuge Product",
+	"description": "A product (e.g. report, tabular dataset, etc.) associated with a project within the Alaska National Wildlife Refuge System.",
+	"version": "1.0.3",
+	"components": {
+		"record": {
+			"main": {
+				"basicInformation": {
+					"recordId": false,
+					"defaultLocale": false
+				},
+				"resourceType": {
+					"resourceType": true,
+					"name": true
+				},
+				"citation": {
+					"basicInformation": {
+						"edition": false,
+						"presentationForm": false,
+						"alternateTitle": false
+					},
+					"onlineResource": {
+						"protocol": false,
+						"applicationProfile": false,
+						"protocolRequest": false
+					},
+					"identifier": false,
+					"identifierShort": {
+						"version": false,
+						"description": false
+					},
+					"series": false,
+					"otherCitationDetails": false,
+					"graphic": false
+				},
+				"description": {
+					"shortAbstract": false
+				},
+				"purpose": false,
+				"supplementalInfo": false,
+				"environmentDescription": false,
+				"timePeriod": {
+					"identifier": false,
+					"periodName": false,
+					"interval": false,
+					"duration": false
+				},
+				"maintenance": {
+                    "frequency": true,
+                    "dates": {
+                        "dateItem": {
+                            "date": false,
+                            "dateType": false,
+                            "description": false
+                        }
+                    },
+                    "contact": {
+                        "role": false,
+                        "contacts": false
+                    },
+                    "note": true,
+                    "scope": false
+                },
+				"graphicOverview": false,
+				"credit": false
+			},
+			"metadata": {
+				"metadataIdentifier": false,
+				"parentMetadata": false,
+				"onlineResource": false,
+				"repositories": false,
+				"maintenance": false,
+				"defaultLocale": false,
+				"alternateMetadataReference": false
+			},
+			"extent": {
+				"description": {},
+				"geographic": {"description": false,
+"containsData": false
+				}
+			},
+			"lineage": {
+				"source": {
+					"description": {},
+					"sourceId": {},
+					"scope": {},
+					"sourceCitation": {
+						"basicInformation": {
+							"title": {},
+							"alternateTitle": false,
+							"dates": {
+								"dateItem": {
+									"date": {},
+									"dateType": {},
+									"description": false
+								}
+							}
+						},
+						"onlineResource": {
+							"name": {},
+							"url": {},
+							"protocol": false,
+							"description": {},
+							"onlineFunction": {},
+							"applicationProfile": false,
+							"protocolRequest": false
+						},
+						"identifier": false,
+						"identifierSimple": {
+							"visible": true,
+							"authority": false,
+							"version": false,
+							"description": false
+						},
+						"identifierShort": false
+					},
+					"metadataCitation": {
+						"basicInformation": {
+							"title": {},
+							"alternateTitle": false,
+							"dates": {
+								"dateItem": {
+									"date": {},
+									"dateType": {},
+									"description": false
+								}
+							}
+						},
+						"onlineResource": {
+							"name": {},
+							"url": {},
+							"protocol": false,
+							"description": {},
+							"onlineFunction": {},
+							"applicationProfile": false,
+							"protocolRequest": false
+						},
+						"identifier": false,
+						"identifierSimple": {
+							"visible": true,
+							"version": false,
+							"description": false,
+							"authority": false
+						},
+						"identifierShort": false
+					}
+				},
+				"citation": {
+					"basicInformation": {
+						"title": {},
+						"alternateTitle": false,
+						"dates": {
+							"dateItem": {
+								"date": {},
+								"dateType": {},
+								"description": false
+							}
+						},
+						"edition": false,
+						"presentationForm": false
+					},
+					"responsibleParty": {
+						"role": {},
+						"contacts": {}
+					},
+					"onlineResource": {
+						"name": {},
+						"url": {},
+						"protocol": false,
+						"description": {},
+						"onlineFunction": {},
+						"applicationProfile": false,
+						"protocolRequest": false
+					},
+					"identifier": false,
+					"identifierSimple": {
+						"visible": true,
+						"authority": false,
+						"version": false,
+						"description": false
+					},
+					"identifierShort": false,
+					"series": false,
+					"otherCitationDetails": false,
+					"graphic": false
+				}
+			},
+			"taxonomy": {
+				"collection": {
+					"taxonomicSystem": {
+						"citation": {
+							"basicInformation": {
+								"alternateTitle": false,
+								"dates": {
+									"dateItem": {
+										"description": false
+									}
+								},
+								"presentationForm": false
+							},
+							"onlineResource": {
+								"protocol": false,
+								"description": false
+							},
+							"identifier": false,
+							"series": false,
+							"otherCitationDetails": false,
+							"graphic": false
+						}
+					}
+				}
+			},
+			"distribution": {
+				"distributor": {
+					"transferOption": {
+						"distributionUnit": false,
+						"onlineOption": {
+							"protocol": false,
+							"applicationProfile": false,
+							"protocolRequest": false
+							},
+						"offlineOption": {
+							"storage": {
+								"density": false,
+								"units": false
+							},
+							"identifier": false
+						},
+						"transferFrequency": false
+					},
+					"orderProcess": {
+						"plannedAvailability": false,
+						"turnaround": false
+					}
+				}
+			},
+			"constraints": {
+				"security": false,
+				"graphic": false,
+				"responsibleParty": false
+			},
+			"associated": {
+				"initiativeType": false,
+				"resourceCitation": {
+					"basicInformation": {
+						"alternateTitle": false,
+						"edition": false,
+						"presentationForm": false,
+						"dates": false
+					},
+					"responsibleParty": false,
+					"onlineResource": false,
+					"identifierSimple": false,
+					"series": false,
+					"otherCitationDetails": false,
+					"graphic": false
+				},
+				"metadataCitation": false
+			}
+		},
+		"contact": {},
+		"dictionary": {
+			"main": {
+				"basicInformation": {
+					"functionalLanguage": false
+				},
+				"recommendedUse": false,
+				"locale": false
+			},
+			"citation": {
+				"basicInformation": {
+					"alternateTitle": false,
+					"presentationForm": false,
+					"dates": {
+						"dateItem": {
+							"description": false
+						}
+					},
+					"edition": false
+				},
+				"onlineResource": false,
+				"identifier": false,
+				"identifierSimple": false,
+				"identifierShort": false,
+				"series": false,
+				"otherCitationDetails": false,
+				"graphic": false
+			},
+			"entity": {
+				"information": {},
+				"identifier": false,
+				"codeName": {},
+				"definition": {},
+				"commonName": false,
+				"alias": false,
+				"structure": {
+					"fieldSeparatorCharacter": {},
+					"numberOfHeaderLines": {},
+					"quoteCharacter": {}
+				},
+				"keys": {},
+				"index": {},
+				"entityReference": false,
+				"attribute": {
+					"name": {},
+					"dataType": {},
+					"definition": {},
+					"allowNull": {},
+					"information": {
+						"codeName": {},
+						"definition": {},
+						"dataType": {},
+						"allowNull": {},
+						"commonName": false,
+						"domain": {},
+						"alias": false,
+						"units": {},
+						"unitsResolution": {},
+						"caseSensitive": {},
+						"fieldWidth": {},
+						"missingValue": {},
+						"minValue": false,
+						"maxValue": false
+					},
+					"valueRange": {},
+					"timePeriod": false,
+					"attributeReference": false
+				},
+				"citation": {
+					"onlineResource": {
+						"protocol": false,
+						"description": {},
+						"applicationProfile": false,
+						"protocolRequest": false
+					},
+					"identifier": {
+						"identifier": {},
+						"namespace": {},
+						"version": {},
+						"description": {},
+						"authority": {
+							"basicInformation": {
+								"alternateTitle": false,
+								"presentationForm": false,
+								"dates": {
+									"dateItem": {
+										"description": false
+									}
+								}
+							},
+							"responsibleParty": {},
+							"onlineResource": {
+								"protocol": false,
+								"description": {},
+								"applicationProfile": false,
+								"protocolRequest": false
+							},
+							"identifier": false,
+							"identifierSimple": {
+								"visible": true,
+								"authority": false,
+								"version": false,
+								"description": false
+							},
+							"identifierShort": false,
+							"series": false,
+							"otherCitationDetails": false,
+							"graphicOverview": false,
+							"graphic": false
+						}
+					}
+				}
+			},
+			"domain": {
+				"information": {
+					"commonName": false,
+					"identifier": false
+				},
+				"identifier": false,
+				"domainReference": false,
+				"domainItem": {
+					"reference": false
+				}
+			}
+		}
+	},
+	"nav": {
+		"record": [
+			{
+				"title": "Main",
+				"target": "record.show.edit.main",
+				"tip": "Basic information about the product."
+			},
+			{
+				"title": "Metadata",
+				"target": "record.show.edit.metadata",
+				"tip": "Information about the metadata for the product."
+			},
+			{
+				"title": "Keywords",
+				"target": "record.show.edit.keywords",
+				"tip": "Terms used to describe the product."
+			},
+			{
+				"title": "Extent",
+				"target": "record.show.edit.extent",
+				"tip": "Information describing the geographic bounds of the product."
+			},
+			{
+				"title": "Taxonomy",
+				"target": "record.show.edit.taxonomy",
+				"tip": "Information on the taxa associated with the product."
+			},
+			{
+				"title": "Lineage",
+				"target": "record.show.edit.lineage",
+				"tip": "Information on the history of the product (e.g., source data, QA/QC)."
+			},
+			{
+				"title": "Distribution",
+				"target": "record.show.edit.distribution",
+				"tip": "Information about obtaining the product."
+			},
+			{
+				"title": "Constraints",
+				"target": "record.show.edit.constraint",
+				"tip": "Information about constraints applied to the product."
+			},
+			{
+				"title": "Associated",
+				"target": "record.show.edit.associated",
+				"tip": "Other resources with a defined relationship to the project (products and data dictionaries)."
+			},
+			{
+				"title": "Dictionaries",
+				"target": "record.show.edit.dictionary",
+				"tip": "Data dictionaries associated with the product."
+			}
+		],
+		"dictionary": [
+			{
+				"title": "Main",
+				"target": "dictionary.show.edit.index",
+				"tip": "Basic information about the dictionary."
+			},
+			{
+				"title": "Entities & Attributes",
+				"target": "dictionary.show.edit.entity",
+				"tip": "Information about entities (tables) and attributes (columns or fields)."
+			},
+			{
+				"title": "Domains",
+				"target": "dictionary.show.edit.domain",
+				"tip": "Information about defined value lists for attributes (columns or fields)."
+			}
+		]
+	}
+}

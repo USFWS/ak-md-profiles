@@ -6,7 +6,7 @@
 	],
 	"title": "AK Refuge Product",
 	"description": "A product (e.g. report, tabular dataset, etc.) associated with a project within the Alaska National Wildlife Refuge System.",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"components": {
 		"record": {
 			"main": {
@@ -50,7 +50,22 @@
 					"interval": false,
 					"duration": false
 				},
-				"maintenance": false,
+				"maintenance": {
+                    "frequency": true,
+                    "dates": {
+                        "dateItem": {
+                            "date": false,
+                            "dateType": false,
+                            "description": false
+                        }
+                    },
+                    "contact": {
+                        "role": false,
+                        "contacts": false
+                    },
+                    "note": true,
+                    "scope": false
+                },
 				"graphicOverview": false,
 				"credit": false
 			},

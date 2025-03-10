@@ -1,0 +1,605 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "USFWS Basic Geospatial Schema",
+  "description": "Minimum required fields and terms for metadata written for USFWS geospatial products.",
+  "$id": "fws-gis-product-schema.json",
+  "version": "1.0.0",
+  "properties": {
+    "metadata": {
+      "properties": {
+        "resourceInfo": {
+          "properties": {
+            "resourceType": {
+              "items": {
+                "properties": {
+                  "type": {
+                    "not": {
+                      "enum": [
+                        "project"
+                      ]
+                    },
+                    "errorMessage": {
+                      "not": "Resource type for products must not be 'project' in the 'Resource Types' section under the 'Main' tab. For projects, use the custom profile for USFWS Discovery Projects."
+                    }
+                  }
+                }
+              }
+            },
+            "pointOfContact": {
+              "allOf": [
+                {
+                  "contains": {
+                    "properties": {
+                      "role": {
+                        "const": "pointOfContact",
+                        "errorMessage": {
+                          "const": "The 'Point of Contact' section under the 'Main' tab must have at least one Data Steward listed with the role 'pointOfContact'."
+                        }
+                      }
+                    }
+                  }
+                }
+              ],
+              "items": {
+                "properties": {
+                  "role": {},
+                  "party": {}
+                },
+                "required": [
+                  "role",
+                  "party"
+                ],
+                "errorMessage": {
+                  "role": "Project data management personnel must be provided in the 'Point of Contact' section under the 'Main' tab. A role that must be included is the Data Steward (pointOfContact).",
+                  "party": "At least one person must be assigned to each role in the 'Point of Contact' section under the 'Main' tab."
+                }
+              }
+            },
+            "citation": {
+              "properties": {
+                "title": {},
+                "date": {
+                  "items": {
+                    "properties": {
+                      "date": {},
+                      "dateType": {}
+                    },
+                    "required": [
+                      "date",
+                      "dateType"
+                    ],
+                    "errorMessage": {
+                      "required": {
+                        "date": "The lastUpdate, lastReviewed, publication, and distribution dates must be provided in the 'Citation' section under the 'Main' tab.",
+                        "dateType": "A type must be provided for dates in the 'Citation' section under the 'Main' tab."
+                      }
+                    }
+                  },
+                  "allOf": [
+                    {
+                      "contains": {
+                        "properties": {
+                          "dateType": {
+                            "const": "publication",
+                            "errorMessage": {
+                              "const": "At least one date with the type 'publication' must be provided in the 'Citation' section under the 'Main' tab."
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "contains": {
+                        "properties": {
+                          "dateType": {
+                            "const": "distribution",
+                            "errorMessage": {
+                              "const": "At least one date with the type 'distribution' must be provided in the 'Citation' section under the 'Main' tab."
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "contains": {
+                        "properties": {
+                          "dateType": {
+                            "const": "lastUpdate",
+                            "errorMessage": {
+                              "const": "At least one date with the type 'lastUpdate' must be provided in the 'Citation' section under the 'Main' tab."
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "contains": {
+                        "properties": {
+                          "dateType": {
+                            "const": "lastRevision",
+                            "errorMessage": {
+                              "const": "At least one date with the type 'lastRevision' must be provided in the 'Citation' section under the 'Main' tab."
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "errorMessage": {
+                      "allOf": "Distribution, publication, update, and revision dates are required in the 'Citation' section under the 'Main' tab."
+                  }
+                  
+                },
+                "responsibleParty": {
+                  "allOf": [
+                    {
+                      "contains": {
+                        "properties": {
+                          "role": {
+                            "const": "publisher",
+                            "errorMessage": {
+                              "const": "A responsible party with the role of 'publisher' must be listed in the 'Citation' section under the 'Main' tab."
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                "identifier": {
+                  "items": {
+                    "properties": {
+                      "identifier": {},
+                      "namespace": {}
+                    },
+                    "required": [
+                      "identifier",
+                      "namespace"
+                    ],
+                    "errorMessage": {
+                      "required": {
+                        "identifier": "Provide an identifier (e.g. Digital Object Identifier (DOI), ISBN, UUID) for the product in the 'Citation' section under the 'Main' tab.",
+                        "namespace": "Provide the context (i.e. namespace) for the product identifier in the 'Citation' section under the 'Main' tab."
+                      }
+                    }
+                  }
+                }
+              },
+              "required": [
+                "title",
+                "date",
+                "responsibleParty",
+                "identifier"
+              ],
+              "errorMessage": {
+                "required": {
+                  "title": "A short, descriptive product title must be provided in the 'Basic Information' section under the 'Main' tab. Product titles should be uniquely identifiable.",
+                  "date": "At least one date (e.g. acquisition, creation, revision) must be provided in the 'Citation' section under the 'Main' tab.",
+                  "responsibleParty": "At least one Responsible Party must be provided in the 'Citation' section under the 'Main' tab.",
+                  "identifier": "Provide an identifier (e.g. Digital Object Identifier (DOI), ISBN, UUID) for the product in the 'Citation' section under the 'Main' tab."
+                }
+              }
+            },
+            "abstract": {},
+            "purpose": {},
+            "timePeriod": {
+              "oneOf": [
+                {
+                  "properties": {
+                    "startDateTime": {},
+                    "endDateTime": {}
+                  },
+                  "anyOf": [
+                    {
+                      "required": [
+                        "startDateTime"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "endDateTime"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "errorMessage": {
+                "oneOf": "A start date and/or an end date must be provided for this data product in the 'Time Period' section under the 'Main' tab."
+              }
+            },
+            "resourceMaintenance": {
+                "items": {
+                    "properties": {
+                        "frequency" :{},
+                        "date":{},
+                        "contact":{}
+                    },
+                    "required": [
+                        "frequency",
+                        "date",
+                        "contact"
+                    ],
+                    "errorMessage": {
+                        "required": {
+                            "frequency": "The frequency of product review and maintenance must be provided under the 'Main' tab.",
+                            "date" : "The date of the maintenance of the product must be provided in the 'Main' tab within the 'Maintenance' section.",
+                            "contact": "A product maintenance contact must be provided in the 'Main' tab within the 'Maintence' section."
+                        }
+                    }
+                }
+            },
+            "keyword": {
+              "items": {
+                "properties": {
+                  "keyword": {},
+                  "thesaurus": {}
+                },
+                "required": [
+                  "keyword",
+                  "thesaurus"
+                ],
+                "errorMessage": {
+                  "required": {
+                    "keyword": "At least one keyword must be provided from each thesaurus under the 'Keywords' tab.",
+                    "thesaurus": "At least one keyword thesaurus must be provided under the 'Keywords' tab."
+                  }
+                }
+              },
+              "contains": {
+                "properties": {
+                  "thesaurus": {
+                    "properties": {
+                      "title": {
+                        "enum": [
+                          "Global Change Master Directory (GCMD) Instruments",
+                          "Global Change Master Directory (GCMD) Platforms",
+                          "Global Change Master Directory (GCMD) Science Keywords",
+                          "ISO 19115 Topic Category",
+                          "Deliverable Types - Landscape Conservation Cooperatives",
+                          "End User Types - Landscape Conservation Cooperatives",
+                          "Project Category - Landscape Conservation Cooperatives"
+                        ],
+                        "errorMessage": {
+                          "enum": "At least one keyword under the 'Keywords' tab must be from a controlled vocabulary thesaurus."
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "extent": {
+              "items": {
+                "properties": {
+                  "geographicExtent": {
+                    "items": {
+                      "properties": {
+                        "containsData": {},
+                        "boundingBox": {},
+                        "description": {}
+                      },
+                      "required": [
+                        "containsData",
+                        "boundingBox",
+                        "description"
+                      ],
+                      "errorMessage": {
+                        "required": {
+                          "containsData": "Checking the box whether or not the geographic extent contains all or some of the data is required in the 'Extent' tab.",
+                          "boundingBox": "A bounding box is required for each geographic extent in the 'Extent' tab.",
+                          "description": "A description is required for each geographic extent in the 'Extent' tab."
+                        }
+                      }
+                    }
+                  }
+                },
+              }
+            },
+            "spatialReferenceSystem": {
+                "items": {
+                  "properties": {
+                    "referenceSystemType": {
+                      "properties": {
+                          "identifier": {}
+                      },
+                      "required": [
+                        "identifier"
+                      ],
+                      "errorMessage": {
+                        "required": {
+                          "identifier": "A reference system identifier is required in the Spatial Reference System panel in the 'Spatial' tab."
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "referenceSystemType"
+                  ],
+                  "errorMessage": {
+                    "required": {
+                      "referenceSystemType": "A reference sytem type must be selected for each Spatial Reference System on the 'Spatial' tab."
+                    }
+                  }
+                }
+              }
+          },
+          "required": [
+            "status",
+            "resourceType",
+            "pointOfContact",
+            "citation",
+            "abstract",
+            "purpose",
+            "timePeriod",
+            "keyword",
+            "spatialRepresentationType",
+            "extent",
+            "spatialReferenceSystem",
+            "resourceMaintenance"
+          ],
+          "errorMessage": {
+            "required": {
+              "status": "The current product status must be provided in the 'Basic Information' section under the 'Main' tab. Status must be one of: 'completed', 'onGoing', 'proposed', or 'accepted'",
+              "resourceType": "Resource type must be provided in the 'Resource Types' section under the 'Main' tab. The resource type for products must not be 'product', but should instead use a more specific type (e.g. tabularDataset, collection, document).",
+              "pointOfContact": "Project and product specific personnel must be provided in the 'Point of Contact' section under the 'Main' tab.",
+              "abstract": "An abstract for the product must be provided in the 'Description' section under the 'Main' tab. Abstracts should summarize the product's purpose and goals.",
+              "purpose": "A short summary of the purpose of the dataset must be provided under the 'Main' tab.",
+              "timePeriod": "A relevant time period for the product must be provided in the 'Time Period' section under the 'Main' tab.",
+              "keyword": "Product keywords must be provided under the 'Keywords' tab. At least one keyword must be provided from the Global Change Master Directory (GCMD) Science Keywords thesaurus.",
+              "spatialRepresentationType": "A seletion for the spatial representation type must be made at the top of the 'Spatial' tab. ",
+              "extent": "The spatial extent of this product must be provided in the 'Extent' tab.",
+              "spatialReferenceSystem": "A spatial reference system is required in the 'Spatial' tab.",
+              "resourceMaintenance": "Information on the maintenance of the resource must be provided under the 'Maintenance' panel of the 'Main' tab.",
+            }
+          }
+        },
+        "metadataInfo": {
+          "properties": {
+            "metadataDate": {
+              "items": {
+                "properties": {
+                  "date": {},
+                  "dateType": {}
+                },
+                "required": [
+                  "date",
+                  "dateType"
+                ],
+                "errorMessage": {
+                  "required": {
+                    "date": "A revision date for the metadata must be provided in the 'Basic Information' section under the 'Metadata' tab.",
+                    "dateType": "A date type must be provided for dates associated with the metadata in the 'Basic Information' section under the 'Metadata' tab."
+                  }
+                }
+              },
+              "contains": {
+                "properties": {
+                  "dateType": {
+                    "const": "lastRevision",
+                    "errorMessage": {
+                      "const": "At least one date with the type 'lastRevision' must be provided in the 'Basic Information' section under the 'Metadata' tab."
+                    }
+                  }
+                }
+              }
+            },
+            "metadataContact": {
+              "allOf": [
+                {
+                  "contains": {
+                    "properties": {
+                      "role": {
+                        "const": "pointOfContact",
+                        "errorMessage": {
+                          "const": "At least one metadata contact must have the role 'pointOfContact' under the 'Metadata Contacts' section of the 'Metadata' tab."
+                        }
+                      }
+                    }
+                  }
+                }
+              ],
+              "items": {
+                "properties": {
+                  "role": {},
+                  "party": {}
+                },
+                "required": [
+                  "role",
+                  "party"
+                ],
+                "errorMessage": {
+                  "required": {
+                    "role": "A role must be provided in the 'Metadata Contacts' section under the 'Metadata' tab.",
+                    "party": "A contact must be provided in the 'Metadata Contacts' section under the 'Metadata' tab."
+                  }
+                }
+              }
+            },
+            "metadataMaintenance": {
+              "items": {
+                "properties": {
+                  "frequency": {}
+                },
+                "required": [
+                  "frequency"
+                ],
+                "errorMessage": {
+                  "required": {
+                    "frequency": "A metadata maintenance frequency is required in the 'Metadata' tab."
+                  }
+                }
+              }
+              
+            }
+          },
+          "required": [
+            "metadataDate",
+            "metadataContact",
+            "metadataMaintenance"
+          ],
+          "errorMessage": {
+            "required": {
+              "metadataDate": "The last revision date of the metadata must be provided in the 'Basic Information' section under the 'Metadata' tab.",
+              "metadataContact": "Contacts for metadata creation must be provided in the 'Metadata Contact' section under the 'Metadata' tab. Roles must include at least 'pointOfContact' and 'author'.",
+              "metadataMaintenance": "A metadata maintenance frequency must be provided in the 'Metadata' tab."
+            }
+          }
+        },
+        "resourceLineage": {
+          "items": {
+            "properties": {
+              "statement": {},
+              "processStep": {},
+              "source": {}
+            },
+            "required": [
+              "statement",
+              "processStep",
+              "source"
+            ],
+            "errorMessage": {
+              "required": {
+                "statement": "A general statement describing the resource lineage is required under the 'Lineage' tab.",
+                "processStep": "At least one process step is required to be described in the 'Lineage' tab.",
+                "source": "A description of the source dataset must be provided in the 'Lineage' tab."
+              }
+            }
+          }
+        },
+        "resourceDistribution": {
+          "items": {
+            "properties": {
+              "distributor": {
+                "items": {
+                  "properties": {
+                    "contact": {
+                      "properties": {
+                        "role": {
+                          "const": "distributor",
+                          "errorMessage": {
+                            "const": "Role for distributor in the 'Distributor' section under the 'Distribution' tab must be 'distributor'."
+                          }
+                        },
+                        "party": {}
+                      },
+                      "required": [
+                        "role",
+                        "party"
+                      ],
+                      "errorMessage": {
+                        "required": {
+                          "role": "Indicate 'distributor' as the role for the product distributor under the 'Distribution' tab.",
+                          "party": "Indicate the organization that will distribute the product as the contact under the 'Distribution' tab."
+                        }
+                      }
+                    },
+                    "transferOption": {
+                      "items": {
+                        "properties": {
+                          "onlineOption": {
+                            "items": {
+                              "properties": {
+                                "uri": {}
+                              },
+                              "required": [
+                                "uri"
+                              ],
+                              "errorMessage": {
+                                "required": {
+                                  "uri": "A URI must be provided for an online option to access the resource under the 'Transfer Option' section of the 'Distributor' section under the 'Distribution' tab. The URI should link to either the direct download (URI that will automatically start a download) or the link to page where you can download the resource."
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "required": [
+                          "onlineOption"
+                        ],
+                        "errorMessage": {
+                          "required": {
+                            "onlineOption": "An online option for distribution must be provided in the 'Transfer Option' section of the 'Distributor' section under the 'Distribution' tab."
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "contact",
+                    "transferOption"
+                  ],
+                  "errorMessage": {
+                    "required": {
+                      "contact": "Provide a contact for distribution in the 'Distributor' section under the 'Distribution' tab.",
+                      "transferOption": "A transfer option must be provided for distribution in the 'Distributor' section under the 'Distribution' tab."
+                    }
+                  }
+                }
+              }
+            },
+            "required": [
+              "distributor"
+            ],
+            "errorMessage": {
+              "required": {
+                "distributor": "Provide a distributor for the resource under the 'Distribution' tab."
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "resourceInfo",
+        "metadataInfo",
+        "resourceDistribution",
+        "resourceLineage"
+      ],
+      "errorMessage": {
+        "required": {
+          "resourceDistribution": "Resource distribution must be described under the 'Distribution' tab.",
+          "resourceLineage": "Information on the lineage of the resource is required under the 'Lineage' tab."
+        }
+      }
+    },
+    "dataDictionary": {}
+  },
+  "if": {
+    "properties": {
+      "metadata": {
+        "properties": {
+          "resourceInfo": {
+            "properties": {
+              "resourceType": {
+                "contains": {
+                  "properties": {
+                    "type": {
+                      "enum": ["geographicDataset","vector","tile","coverage"]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "then": {
+    "required": [
+      "metadata",
+      "dataDictionary"
+    ],
+    "errorMessage": {
+      "required": {
+        "dataDictionary": "Data products with resource types including geographic dataset, vector, tile, or coverage must meet basic metadata specifications for geospatial resources and must be associated with a data dictionary under the 'Dictionaries' tab."
+      }
+    }
+  },
+  "else": {
+    "required": [
+      "metadata"
+    ]
+  },
+  "errorMessage": {
+    "if": "If this data product is geospatial (ie. geospatial dataset, tile, coverage or vector layer) then it must be associated with a data dictionary under the 'Dictionaries' tab."
+  }
+}

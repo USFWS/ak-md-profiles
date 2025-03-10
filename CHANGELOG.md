@@ -3,13 +3,21 @@
 
 ## 2025-03-10
 
-Added mdEditor settings file: "AKRegion-Profiles-mdeditor-20220316.json". The file can be imported into the mdEditor to load all regional profiles and schemas. The file links to the most recent versions of the profiles, schemas, and definitions. The file contains the following versions:
-  - AK Region Project Schema ([]())
-  - AK Region Product Schema ([]())
-  - AK Region Data Dictionary Schema ([]())
-  - AK Region Project Profile Definition ([]())
-  - AK Region Product Profile Definition ([]()) ([ak-prod-profile.json](https://raw.githubusercontent.com/USFWS/ak-md-profiles/main/ak-prod-profile.json))
+### Added: AKRegion-Profiles-mdeditor-20250310.json
+
+The file is an updated version of the previous profile packege (_AKRegion-Profiles-mdeditor-20220316.json_) that has been edited to remove embedded mdEditor settings.
+
+
+### Added: AKRegion-Profiles-mdeditor-20220316.json
+
+The mdEditor-JSON file contains all regional profiles and schemas. Importing the file into the mdEditor will load the most recent versions of the Alasak profiles, schemas, and definitions. The file was previously available from the Alaska regional data repository (RDR) and was added to the profile repository to allow for history tracking. The file contains the following profile definitions and schemas:
+
+  - AK Region Project Profile Definition ([ak-proj-profile.json](https://raw.githubusercontent.com/USFWS/ak-md-profiles/refs/heads/main/ak-proj-profile.json))
+  - AK Region Project Schema ([ak-proj-schema.json](https://raw.githubusercontent.com/USFWS/ak-md-profiles/refs/heads/main/ak-proj-schema.json))
+  - AK Region Product Profile Definition ([ak-prod-profile.json](https://raw.githubusercontent.com/USFWS/ak-md-profiles/refs/heads/main/ak-prod-profile.json))
+  - AK Region Product Schema ([ak-prod-schema.json](https://raw.githubusercontent.com/USFWS/ak-md-profiles/refs/heads/main/ak-prod-schema.json))
   - AK Region Data Dictionary Profile Definition ([ak-data-dict-profile.json](https://raw.githubusercontent.com/USFWS/ak-md-profiles/main/ak-data-dict-profile.json))
+  - AK Region Data Dictionary Schema ([ak-data-dict-schema.json](https://raw.githubusercontent.com/USFWS/ak-md-profiles/refs/heads/main/ak-data-dict-schema.json))
   
 
 ## 2022-06-09

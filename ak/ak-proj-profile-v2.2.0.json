@@ -1,0 +1,315 @@
+{
+    "identifier": "ak-region-proj",
+    "namespace": "gov.fws.profile",
+    "title": "AK Region Project ISO Profile",
+    "description": "Hides fields and navigation menu items to simplify metadata entry during project metadata entry designed by USFWS Alaska Region Data Management Staff. Updated to un-hide extent and distribution format fields, and add a Constraints tab to navigation, now required by ak-proj-schema v2.2.0 for ISO 19115 / DCAT compliance. NOTE: accessLevel, bureauCode, and programCode have no corresponding component in the stock mdEditor field tree.",
+    "version": "2.2.0",
+    "components": {
+      "record": {
+        "main": {
+          "basicInformation": {
+            "recordId": false,
+            "defaultLocale": false
+          },
+          "citation": {
+            "basicInformation": {
+              "edition": false,
+              "presentationForm": false
+            },
+            "onlineResource": {
+              "protocol": false,
+              "applicationProfile": false,
+              "protocolRequest": false
+            },
+            "identifier": false,
+            "identifierShort": {
+              "version": false,
+              "description": false
+            },
+            "series" :false,
+            "otherCitationDetails": false,
+            "graphic": false
+          },
+          "supplementalInfo": false,
+          "environmentDescription": false,
+          "timePeriod": {
+            "identifier": false,
+            "periodName": false,
+            "interval": false,
+            "duration": false
+          },
+          "maintenance": {
+            "dates": false,
+            "contact": false,
+            "scope": false,
+            "note": false
+          },
+          "graphicOverview": false,
+          "credit": false
+        },
+        "metadata": {
+          "metadataIdentifier": false,
+          "parentMetadata": {
+            "basicInformation": {
+              "title": true,
+              "alternateTitle": false,
+              "dates": {
+                "dateItem": {
+                  "date": false,
+                  "dateType": false,
+                  "description": false
+                }
+              },
+              "edition": false,
+              "presentationForm": false
+            },
+            "responsibleParty": {
+              "role": false,
+              "contacts": false
+            },
+            "onlineResource": {
+              "name": false,
+              "url": false,
+              "protocol": false,
+              "description": false,
+              "onlineFunction": false,
+              "applicationProfile": false,
+              "protocolRequest": false
+            },
+            "identifier": {
+              "identifier": true,
+              "namespace": true,
+              "version": false,
+              "description": false,
+              "authority": {
+                "basicInformation": {
+                  "title": false,
+                  "alternateTitle": false,
+                  "dates": {
+                    "dateItem": {
+                      "date": false,
+                      "dateType": false,
+                      "description": false
+                    }
+                  }
+                },
+                "responsibleParty": {
+                  "role": false,
+                  "contacts": false
+                },
+                "onlineResource": {
+                  "name": false,
+                  "url": false,
+                  "protocol": false,
+                  "description": false,
+                  "onlineFunction": false,
+                  "applicationProfile": false,
+                  "protocolRequest": false
+                },
+                "identifier": false,
+                "identifierSimple": {
+                  "identifier": false,
+                  "namespace": false,
+                  "version": false,
+                  "description": false,
+                  "authority": {
+                    "basicInformation": {
+                      "title": false,
+                      "alternateTitle": false,
+                      "dates": false
+                    },
+                    "responsibleParty": false,
+                    "onlineResource": false,
+                    "identifier": false,
+                    "identifierSimple": false,
+                    "identifierShort": false
+                  }
+                },
+                "identifierShort": false
+              }
+            },
+            "identifierSimple": false,
+            "identifierShort": false,
+            "series": {
+              "name": false,
+              "issue": false,
+              "page": false
+            },
+            "otherCitationDetails": false,
+            "graphic": {
+              "fileName": false,
+              "fileType": false,
+              "fileDescription": false,
+              "onlineResource": {
+                "name": false,
+                "url": false,
+                "protocol": false,
+                "description": false,
+                "onlineFunction": false,
+                "applicationProfile": false,
+                "protocolRequest": false
+              }
+            }
+          },
+          "onlineResource": false,
+          "maintenance": false,
+          "defaultLocale": false,
+          "alternateMetadataReference": false
+        },
+        "extent": {
+          "description": false,
+          "geographic": {
+            "containsData": true
+          }
+        },
+        "taxonomy": {
+          "collection": {
+            "taxonomicSystem": {
+              "citation": {
+                "onlineResource": {
+                  "protocol": false,
+                  "applicationProfile": false,
+                  "protocolRequest": false
+                },
+                "identifier": false,
+                "identifierSimple": {
+                  "version": false,
+                  "description": false,
+                  "authority": false
+                },
+                "identifierShort": false,
+                "series": false,
+                "otherCitationDetails": false,
+                "graphic": false
+              }
+            }
+          }
+        },
+        "distribution": {
+          "distributor": {
+            "transferOption": {
+              "transferSize": false,
+              "distributionUnit": false,
+              "onlineOption": {
+                "protocol": false,
+                "applicationProfile": false,
+                "protocolRequest": false
+              },
+              "offlineOption": false,
+              "distributionFormat": true,
+              "transferFrequency": false
+            },
+            "orderProcess": false
+          }
+        },
+        "constraints": {
+          "graphic": false
+        },
+        "funding": {
+          "fundingPeriod": {
+            "allocation": {
+              "onlineResource": {
+                "protocol": false,
+                "applicationProfile": false,
+                "protocolRequest": false
+              }
+            },
+            "timePeriod": {
+              "identifier": false,
+              "periodName": false,
+              "interval": false,
+              "duration": false
+            }
+          }
+        },
+        "associated": {
+          "initiativeType": false,
+          "resourceCitation": {
+            "basicInformation": {
+              "alternateTitle": false,
+              "edition": false,
+              "presentationForm": false
+            },
+            "identifier": false,
+            "identifierSimple": false,
+            "onlineResource": {
+              "protocol": false,
+              "applicationProfile": false,
+              "protocolRequest": false
+            },
+            "identifierShort": {},
+            "series": false,
+            "otherCitationDetails": false,
+            "graphic": false
+          },
+          "metadataCitation": {
+            "basicInformation": {
+              "alternateTitle": false,
+              "edition": false,
+              "presentationForm": false
+            },
+            "identifier": false,
+            "identifierSimple": false,
+            "onlineResource": {
+              "protocol": false,
+              "applicationProfile": false,
+              "protocolRequest": false
+            },
+            "identifierShort": {},
+            "series": false,
+            "otherCitationDetails": false,
+            "graphic": false
+          }
+        }
+      }
+    },
+    "nav": {
+      "record": [
+        {
+          "title": "Main",
+          "target": "record.show.edit.main",
+          "tip": "Basic information about the project."
+        },
+        {
+          "title": "Metadata",
+          "target": "record.show.edit.metadata",
+          "tip": "Information about the metadata for the project."
+        },
+        {
+          "title": "Keywords",
+          "target": "record.show.edit.keywords",
+          "tip": "Terms used to describe the project."
+        },
+        {
+          "title": "Extent",
+          "target": "record.show.edit.extent",
+          "tip": "Information describing the geographic bounds of the project, including its reference system. Required for ISO 19115 / DCAT compliance."
+        },
+        {
+          "title": "Taxonomy",
+          "target": "record.show.edit.taxonomy",
+          "tip": "Information on the taxa associated with the project."
+        },
+        {
+          "title": "Distribution",
+          "target": "record.show.edit.distribution",
+          "tip": "Information about obtaining project resources. At least one distributor with a distribution format is required for DCAT compliance."
+        },
+        {
+          "title": "Constraints",
+          "target": "record.show.edit.constraint",
+          "tip": "Information about constraints applied to the project. At least one license or use/access constraint is required for DCAT compliance."
+        },
+        {
+          "title": "Funding",
+          "target": "record.show.edit.funding",
+          "tip": "Information about funding allocated to development of the project."
+        },
+        {
+          "title": "Associated",
+          "target": "record.show.edit.associated",
+          "tip": "Other resources with a defined relationship to the project."
+        }
+      ]
+    }
+  }

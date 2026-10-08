@@ -1,0 +1,382 @@
+{
+    "identifier": "akproduct",
+    "namespace": "gov.fws.profile",
+    "title": "AK Region Product ISO Profile",
+    "description": "Hides fields and navigation menu items to simplify metadata entry  during product metadata entry designed by USFWS Alaska Region Data ManagementStaff. Updated to un-hide extent, reference system, and distribution format fields now required by ak-prod-schema v1.1.0 for ISO 19115 / DCAT compliance. NOTE: accessLevel, bureauCode, programCode, and metadataStandard have no corresponding component in the stock mdEditor field tree. see accompanying notes.",
+    "version": "2.2.0",
+    "components": {
+      "record": {
+        "main": {
+          "basicInformation": {
+            "recordId": false,
+            "defaultLocale": false
+          },
+          "citation": {
+            "basicInformation": {
+              "edition": false,
+              "presentationForm": false
+            },
+            "onlineResource": {
+              "protocol": false,
+              "applicationProfile": false,
+              "protocolRequest": false
+            },
+            "identifier": false,
+            "identifierShort": {
+              "version": false,
+              "description": false
+            },
+            "otherCitationDetails": false,
+            "graphic": false
+          },
+          "supplementalInfo": false,
+          "environmentDescription": false,
+          "timePeriod": {
+            "identifier": false,
+            "periodName": false,
+            "interval": false,
+            "duration": false
+          },
+          "maintenance": {
+            "frequency": true,
+            "dates": {
+                "dateItem": {
+                    "date": false,
+                    "dateType": false,
+                    "description": false
+                }
+            },
+            "contact": {
+                "role": false,
+                "contacts": false
+            },
+            "note": true,
+            "scope": false
+        },
+          "graphicOverview": false,
+          "credit": false
+        },
+        "metadata": {
+          "metadataIdentifier": false,
+          "parentMetadata": {
+            "basicInformation": {
+              "title": true,
+              "alternateTitle": false,
+              "dates": {
+                "dateItem": {
+                  "date": false,
+                  "dateType": false,
+                  "description": false
+                }
+              },
+              "edition": false,
+              "presentationForm": false
+            },
+            "responsibleParty": {
+              "role": false,
+              "contacts": false
+            },
+            "onlineResource": {
+              "name": false,
+              "url": false,
+              "protocol": false,
+              "description": false,
+              "onlineFunction": false,
+              "applicationProfile": false,
+              "protocolRequest": false
+            },
+            "identifier": {
+              "identifier": true,
+              "namespace": true,
+              "version": false,
+              "description": false,
+              "authority": {
+                "basicInformation": {
+                  "title": false,
+                  "alternateTitle": false,
+                  "dates": {
+                    "dateItem": {
+                      "date": false,
+                      "dateType": false,
+                      "description": false
+                    }
+                  }
+                },
+                "responsibleParty": {
+                  "role": false,
+                  "contacts": false
+                },
+                "onlineResource": {
+                  "name": false,
+                  "url": false,
+                  "protocol": false,
+                  "description": false,
+                  "onlineFunction": false,
+                  "applicationProfile": false,
+                  "protocolRequest": false
+                },
+                "identifier": false,
+                "identifierSimple": {
+                  "identifier": false,
+                  "namespace": false,
+                  "version": false,
+                  "description": false,
+                  "authority": {
+                    "basicInformation": {
+                      "title": false,
+                      "alternateTitle": false,
+                      "dates": false
+                    },
+                    "responsibleParty": false,
+                    "onlineResource": false,
+                    "identifier": false,
+                    "identifierSimple": false,
+                    "identifierShort": false
+                  }
+                },
+                "identifierShort": false
+              }
+            },
+            "identifierSimple": false,
+            "identifierShort": false,
+            "series": {
+              "name": false,
+              "issue": false,
+              "page": false
+            },
+            "otherCitationDetails": false,
+            "graphic": {
+              "fileName": false,
+              "fileType": false,
+              "fileDescription": false,
+              "onlineResource": {
+                "name": false,
+                "url": false,
+                "protocol": false,
+                "description": false,
+                "onlineFunction": false,
+                "applicationProfile": false,
+                "protocolRequest": false
+              }
+            }
+          },
+          "onlineResource": false,
+          "maintenance": false,
+          "defaultLocale": false,
+          "alternateMetadataReference": false
+        },
+        "extent": {
+          "description": false,
+          "geographic": {
+            "containsData": true
+          }
+        },
+        "lineage": {
+          "processStep": {
+            "stepId": false,
+            "timePeriod": {
+              "identifier": false,
+              "periodName": false,
+              "interval": false,
+              "duration": false,
+              "scope": false
+            },
+            "stepReference": false,
+            "scope": false
+          },
+          "source": {
+            "sourceId": false,
+            "scope": false,
+            "sourceCitation": {
+              "basicInformation": {
+                "alternateTitle": false
+              },
+              "onlineResource": {
+                "protocol": false,
+                "applicationProfile": false,
+                "protocolRequest": false
+              },
+              "identifierSimple": {
+                "version": false,
+                "description": false,
+                "authority": false
+              }
+            },
+            "metadataCitation": false,
+            "referenceSystem": false,
+            "spatialResolution": false
+          },
+          "scope": false,
+          "citation": {
+            "basicInformation": {
+              "edition": false,
+              "presentationForm": false
+            },
+            "onlineResource": {
+              "protocol": false,
+              "applicationProfile": false,
+              "protocolRequest": false
+            },
+            "identifier": false,
+            "identifierShort": {
+              "version": false,
+              "description": false
+            },
+            "otherCitationDetails": false,
+            "graphic": false
+          }
+        },
+        "taxonomy": {
+          "collection": {
+            "taxonomicSystem": {
+              "citation": {
+                "onlineResource": {
+                  "protocol": false,
+                  "applicationProfile": false,
+                  "protocolRequest": false
+                },
+                "identifier": false,
+                "identifierSimple": {
+                  "authority": {
+                    "basicInformation": {
+                      "alternateTitle": false,
+                      "dates": false
+                    },
+                    "onlineResource": {
+                      "protocol": false,
+                      "applicationProfile": false,
+                      "protocolRequest": false
+                    },
+                    "identifier": false
+                  }
+                },
+                "identifierShort": false,
+                "series": false,
+                "otherCitationDetails": false,
+                "graphic": false
+              }
+            }
+          }
+        },
+        "distribution": {
+          "distributor": {
+            "transferOption": {
+              "distributionUnit": false,
+              "onlineOption": {
+                "protocol": false,
+                "applicationProfile": false,
+                "protocolRequest": false
+              },
+              "offlineOption": {
+                "storage": {
+                  "density": false,
+                  "units": false
+                },
+                "identifier": false
+              },
+              "transferFrequency": false,
+              "distributionFormat": true
+            },
+            "orderProcess": {
+              "plannedAvailability": false,
+              "turnaround": false
+            }
+          }
+        },
+        "constraints": {
+          "graphic": false
+        },
+        "associated": {
+          "resourceCitation": {
+            "basicInformation": {
+              "alternateTitle": false,
+              "edition": false,
+              "presentationForm": false
+            },
+            "onlineResource": false,
+            "identifierSimple": false,
+            "series": false,
+            "otherCitationDetails": false,
+            "graphic": false
+          },
+          "metadataCitation": false
+        }
+      },
+      "dataQuality": {
+        "standaloneQualityReport": {
+            "citation": {
+                "basicInformation": {
+                  "edition": false,
+                  "presentationForm": false
+                },
+                "onlineResource": {
+                  "protocol": false,
+                  "applicationProfile": false,
+                  "protocolRequest": false
+                },
+                "identifier": false,
+                "identifierShort": {
+                  "version": false,
+                  "description": false
+                },
+                "otherCitationDetails": false,
+                "graphic": false
+              }
+        }
+      }
+    },
+    "nav": {
+      "record": [
+        {
+          "title": "Main",
+          "target": "record.show.edit.main",
+          "tip": "Basic information about the product."
+        },
+        {
+          "title": "Metadata",
+          "target": "record.show.edit.metadata",
+          "tip": "Information about the metadata for the product."
+        },
+        {
+          "title": "Keywords",
+          "target": "record.show.edit.keywords",
+          "tip": "Terms used to describe the product."
+        },
+        {
+          "title": "Extent",
+          "target": "record.show.edit.extent",
+          "tip": "Information describing the geographic bounds of the product. Required for ISO 19115 / DCAT compliance unless this product is a document or non-geographic dataset."
+        },
+        {
+          "title": "Lineage",
+          "target": "record.show.edit.lineage",
+          "tip": "Information on the history and processing of the product. A lineage statement is required for ISO 19115 compliance."
+        },
+        {
+          "title": "Taxonomy",
+          "target": "record.show.edit.taxonomy",
+          "tip": "Information on the taxa associated with the product."
+        },
+        {
+          "title": "Distribution",
+          "target": "record.show.edit.distribution",
+          "tip": "Information about obtaining the product. A distribution format is required for DCAT compliance."
+        },
+        {
+          "title": "Constraints",
+          "target": "record.show.edit.constraint",
+          "tip": "Information about constraints applied to the product. At least one license or use/access constraint is required for DCAT compliance."
+        },
+        {
+          "title": "Associated",
+          "target": "record.show.edit.associated",
+          "tip": "Other resources with a defined relationship to the product."
+        },
+        {
+          "title": "Dictionaries",
+          "target": "record.show.edit.dictionary",
+          "tip": "Data dictionaries associated with the product."
+        }
+      ]
+    }
+  }
